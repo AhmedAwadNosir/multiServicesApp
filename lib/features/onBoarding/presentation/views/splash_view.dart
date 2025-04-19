@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/app_images.dart';
+import 'package:multiservices_app/core/theme/theme_provider.dart';
+import 'package:multiservices_app/generated/l10n.dart';
+import 'package:multiservices_app/l10n/localization_provider.dart';
 import 'package:provider/provider.dart';
 
 class SplashView extends StatelessWidget {
@@ -9,6 +12,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenHieght = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    var lang = S.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -24,7 +28,7 @@ class SplashView extends StatelessWidget {
             top: screenHieght * 0.28,
             left: screenWidth * 0.08,
             child: CustomCirclarContainer(
-              title: "ExploreBooks",
+              title: lang.explorebooks,
               color: Theme.of(context).colorScheme.secondary,
             ),
           ),
@@ -32,7 +36,7 @@ class SplashView extends StatelessWidget {
             top: screenHieght * 0.28,
             right: screenWidth * 0.08,
             child: CustomCirclarContainer(
-              title: "what hapned",
+              title: lang.whathapend,
               color: Theme.of(context).colorScheme.primary,
             ),
           ),
@@ -40,7 +44,7 @@ class SplashView extends StatelessWidget {
             bottom: screenHieght * 0.28,
             right: screenWidth * 0.08,
             child: CustomCirclarContainer(
-              title: "chat with friends",
+              title: lang.chatwithfriends,
               color: Theme.of(context).colorScheme.shadow,
             ),
           ),
@@ -48,9 +52,33 @@ class SplashView extends StatelessWidget {
             bottom: screenHieght * 0.28,
             left: screenWidth * 0.08,
             child: CustomCirclarContainer(
-              title: "Take Notes",
+              title: lang.takenotes,
               color: Theme.of(context).colorScheme.tertiary,
             ),
+          ),
+
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  Provider.of<LocalizationProvider>(
+                    context,
+                    listen: false,
+                  ).toggleLanguage();
+                },
+                icon: Icon(Icons.language),
+              ),
+              SizedBox(width: 15),
+              IconButton(
+                onPressed: () {
+                  Provider.of<ThemeProvider>(
+                    context,
+                    listen: false,
+                  ).toggleTheme();
+                },
+                icon: Icon(Icons.light_mode),
+              ),
+            ],
           ),
         ],
       ),
@@ -72,7 +100,7 @@ class CustomCirclarContainer extends StatelessWidget {
       ),
       padding: EdgeInsets.all(30),
       child: SizedBox(
-        height: title.length * 5,
+        height: title.length * 5.5,
         width: 62,
         child: Text(
           title,
