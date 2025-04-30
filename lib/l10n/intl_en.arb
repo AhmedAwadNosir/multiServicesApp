@@ -1,6 +1,15 @@
 {
-    "whathapend":"ماذا يحدث",
-    "explorebooks":"استكشف كتب",
-    "takenotes":"دون ملاحظات",
-    "chatwithfriends":"تحدث مع الاصدقاء"
+    "whathapend":"what hapned",
+    "explorebooks":"explore books",
+    "takenotes":"take notes",
+    "chatwithfriends":"chat with friends",
+    "skip":"skip",
+    "onbaordingbookstitle":"Read, Discover, Escape",
+    "onbaordingbookssubtitle":"Explore a world of stories, knowledge, and inspiration with thousands of eBooks and audiobooks in one easy-to-use app",
+    "onbaordingNewstitle":"Stay Informed, Stay Ahead",
+    "onbaordingNewssubtitle":"Get the latest headlines, breaking news, and personalized stories from around the world — right at your fingertips",
+    "onbaordingchattitle":"Connect, Share, Communicate",
+    "onbaordingchatsubtitle":"Instantly message friends, family, or teams with text, images, and voice — anytime, anywhere",
+    "onbaordingnotestitle":"Capture, Organize, Remember",
+    "onbaordingnotessubtitle":"Quickly jot down ideas, reminders, and to-do lists to keep your life organized and your thoughts in one place"
 }

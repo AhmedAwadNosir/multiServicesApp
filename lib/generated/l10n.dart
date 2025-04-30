@@ -55,26 +55,116 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `ماذا يحدث`
+  /// `what hapned`
   String get whathapend {
-    return Intl.message('ماذا يحدث', name: 'whathapend', desc: '', args: []);
+    return Intl.message('what hapned', name: 'whathapend', desc: '', args: []);
   }
 
-  /// `استكشف كتب`
+  /// `explore books`
   String get explorebooks {
-    return Intl.message('استكشف كتب', name: 'explorebooks', desc: '', args: []);
+    return Intl.message(
+      'explore books',
+      name: 'explorebooks',
+      desc: '',
+      args: [],
+    );
   }
 
-  /// `دون ملاحظات`
+  /// `take notes`
   String get takenotes {
-    return Intl.message('دون ملاحظات', name: 'takenotes', desc: '', args: []);
+    return Intl.message('take notes', name: 'takenotes', desc: '', args: []);
   }
 
-  /// `تحدث مع الاصدقاء`
+  /// `chat with friends`
   String get chatwithfriends {
     return Intl.message(
-      'تحدث مع الاصدقاء',
+      'chat with friends',
       name: 'chatwithfriends',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `skip`
+  String get skip {
+    return Intl.message('skip', name: 'skip', desc: '', args: []);
+  }
+
+  /// `Read, Discover, Escape`
+  String get onbaordingbookstitle {
+    return Intl.message(
+      'Read, Discover, Escape',
+      name: 'onbaordingbookstitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore a world of stories, knowledge, and inspiration with thousands of eBooks and audiobooks in one easy-to-use app`
+  String get onbaordingbookssubtitle {
+    return Intl.message(
+      'Explore a world of stories, knowledge, and inspiration with thousands of eBooks and audiobooks in one easy-to-use app',
+      name: 'onbaordingbookssubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stay Informed, Stay Ahead`
+  String get onbaordingNewstitle {
+    return Intl.message(
+      'Stay Informed, Stay Ahead',
+      name: 'onbaordingNewstitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get the latest headlines, breaking news, and personalized stories from around the world — right at your fingertips`
+  String get onbaordingNewssubtitle {
+    return Intl.message(
+      'Get the latest headlines, breaking news, and personalized stories from around the world — right at your fingertips',
+      name: 'onbaordingNewssubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connect, Share, Communicate`
+  String get onbaordingchattitle {
+    return Intl.message(
+      'Connect, Share, Communicate',
+      name: 'onbaordingchattitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Instantly message friends, family, or teams with text, images, and voice — anytime, anywhere`
+  String get onbaordingchatsubtitle {
+    return Intl.message(
+      'Instantly message friends, family, or teams with text, images, and voice — anytime, anywhere',
+      name: 'onbaordingchatsubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Capture, Organize, Remember`
+  String get onbaordingnotestitle {
+    return Intl.message(
+      'Capture, Organize, Remember',
+      name: 'onbaordingnotestitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quickly jot down ideas, reminders, and to-do lists to keep your life organized and your thoughts in one place`
+  String get onbaordingnotessubtitle {
+    return Intl.message(
+      'Quickly jot down ideas, reminders, and to-do lists to keep your life organized and your thoughts in one place',
+      name: 'onbaordingnotessubtitle',
       desc: '',
       args: [],
     );

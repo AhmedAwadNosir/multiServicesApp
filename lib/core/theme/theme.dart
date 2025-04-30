@@ -19,10 +19,10 @@ abstract class AppTheming {
       primary: Color.fromARGB(255, 48, 72, 189),
       secondary: Colors.black,
       tertiary: Color(0xffc31331), //color for big sub title
-      shadow: Colors.amber,
+      shadow: Color(0xffcbb2ab),
       onPrimary: Colors.white,
       onSecondary: Color(0xfff79e1B),
-      onTertiary: Color(0xffcbb2ab),
+      onTertiary: Colors.amber,
       // color for smal sub title
     ),
   );

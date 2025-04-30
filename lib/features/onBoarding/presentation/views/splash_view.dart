@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/core/app_images.dart';
+import 'package:multiservices_app/core/utils/app_images.dart';
 import 'package:multiservices_app/core/theme/theme_provider.dart';
+import 'package:multiservices_app/features/onBoarding/functions/splash_navigation_controler.dart';
+import 'package:multiservices_app/features/onBoarding/presentation/widgets/custom_circle_container.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
 import 'package:provider/provider.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(milliseconds: 1000), () {
+      spashNavigationControler(context);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +60,7 @@ class SplashView extends StatelessWidget {
             right: screenWidth * 0.08,
             child: CustomCirclarContainer(
               title: lang.chatwithfriends,
-              color: Theme.of(context).colorScheme.shadow,
+              color: Theme.of(context).colorScheme.onTertiary,
             ),
           ),
           Positioned(
@@ -56,58 +71,7 @@ class SplashView extends StatelessWidget {
               color: Theme.of(context).colorScheme.tertiary,
             ),
           ),
-
-          Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Provider.of<LocalizationProvider>(
-                    context,
-                    listen: false,
-                  ).toggleLanguage();
-                },
-                icon: Icon(Icons.language),
-              ),
-              SizedBox(width: 15),
-              IconButton(
-                onPressed: () {
-                  Provider.of<ThemeProvider>(
-                    context,
-                    listen: false,
-                  ).toggleTheme();
-                },
-                icon: Icon(Icons.light_mode),
-              ),
-            ],
-          ),
         ],
-      ),
-    );
-  }
-}
-
-class CustomCirclarContainer extends StatelessWidget {
-  const CustomCirclarContainer({super.key, required this.title, this.color});
-  final String title;
-  final Color? color;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: color ?? Theme.of(context).primaryColor,
-
-        shape: BoxShape.circle,
-      ),
-      padding: EdgeInsets.all(30),
-      child: SizedBox(
-        height: title.length * 5.5,
-        width: 62,
-        child: Text(
-          title,
-          textAlign: TextAlign.center,
-          softWrap: true,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-        ),
       ),
     );
   }

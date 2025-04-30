@@ -22,9 +22,36 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "chatwithfriends": MessageLookupByLibrary.simpleMessage("تحدث مع الاصدقاء"),
-    "explorebooks": MessageLookupByLibrary.simpleMessage("استكشف كتب"),
-    "takenotes": MessageLookupByLibrary.simpleMessage("دون ملاحظات"),
-    "whathapend": MessageLookupByLibrary.simpleMessage("ماذا يحدث"),
+    "chatwithfriends": MessageLookupByLibrary.simpleMessage(
+      "chat with friends",
+    ),
+    "explorebooks": MessageLookupByLibrary.simpleMessage("explore books"),
+    "onbaordingNewssubtitle": MessageLookupByLibrary.simpleMessage(
+      "Get the latest headlines, breaking news, and personalized stories from around the world — right at your fingertips",
+    ),
+    "onbaordingNewstitle": MessageLookupByLibrary.simpleMessage(
+      "Stay Informed, Stay Ahead",
+    ),
+    "onbaordingbookssubtitle": MessageLookupByLibrary.simpleMessage(
+      "Explore a world of stories, knowledge, and inspiration with thousands of eBooks and audiobooks in one easy-to-use app",
+    ),
+    "onbaordingbookstitle": MessageLookupByLibrary.simpleMessage(
+      "Read, Discover, Escape",
+    ),
+    "onbaordingchatsubtitle": MessageLookupByLibrary.simpleMessage(
+      "Instantly message friends, family, or teams with text, images, and voice — anytime, anywhere",
+    ),
+    "onbaordingchattitle": MessageLookupByLibrary.simpleMessage(
+      "Connect, Share, Communicate",
+    ),
+    "onbaordingnotessubtitle": MessageLookupByLibrary.simpleMessage(
+      "Quickly jot down ideas, reminders, and to-do lists to keep your life organized and your thoughts in one place",
+    ),
+    "onbaordingnotestitle": MessageLookupByLibrary.simpleMessage(
+      "Capture, Organize, Remember",
+    ),
+    "skip": MessageLookupByLibrary.simpleMessage("skip"),
+    "takenotes": MessageLookupByLibrary.simpleMessage("take notes"),
+    "whathapend": MessageLookupByLibrary.simpleMessage("what hapned"),
   };
 }

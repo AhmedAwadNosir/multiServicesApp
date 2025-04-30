@@ -1,6 +1,15 @@
 {
-    "whathapend":"what hapned",
-    "explorebooks":"explore books",
-    "takenotes":"take notes",
-    "chatwithfriends":" chat with friends"
+    "whathapend": "ماذا يحدث",
+      "explorebooks": "استكشف الكتب",
+      "takenotes": "دون ملاحظات",
+      "chatwithfriends": "تحدث مع الأصدقاء",
+      "skip":"تخطي",
+      "onbaordingbookstitle": "اقرأ، اكتشف، اهرب",
+      "onbaordingbookssubtitle": "استكشف عالماً من القصص والمعرفة والإلهام مع آلاف الكتب الإلكترونية والكتب الصوتية في تطبيق سهل الاستخدام",
+      "onbaordingNewstitle": "ابقَ مطلعًا، وكن في المقدمة",
+      "onbaordingNewssubtitle": "تابع آخر الأخبار، العناوين العاجلة، والمقالات أولاً بأول",
+      "onbaordingchattitle": "تواصل، شارك، تحدث",
+      "onbaordingchatsubtitle": "ارسل رسائل فورية إلى الأصدقاء والعائلة أو الفرق بالنصوص والصور والصوت — في أي وقت وأي مكان",
+      "onbaordingnotestitle": "سجّل، نظّم، تذكّر",
+      "onbaordingnotessubtitle": "قم بتدوين الأفكار والتذكيرات وقوائم المهام بسرعة للحفاظ على تنظيم حياتك وأفكارك في مكان واحد"
 }

@@ -22,11 +22,34 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "chatwithfriends": MessageLookupByLibrary.simpleMessage(
-      " chat with friends",
+    "chatwithfriends": MessageLookupByLibrary.simpleMessage("تحدث مع الأصدقاء"),
+    "explorebooks": MessageLookupByLibrary.simpleMessage("استكشف الكتب"),
+    "onbaordingNewssubtitle": MessageLookupByLibrary.simpleMessage(
+      "تابع آخر الأخبار، العناوين العاجلة، والمقالات أولاً بأول",
     ),
-    "explorebooks": MessageLookupByLibrary.simpleMessage("explore books"),
-    "takenotes": MessageLookupByLibrary.simpleMessage("take notes"),
-    "whathapend": MessageLookupByLibrary.simpleMessage("what hapned"),
+    "onbaordingNewstitle": MessageLookupByLibrary.simpleMessage(
+      "ابقَ مطلعًا، وكن في المقدمة",
+    ),
+    "onbaordingbookssubtitle": MessageLookupByLibrary.simpleMessage(
+      "استكشف عالماً من القصص والمعرفة والإلهام مع آلاف الكتب الإلكترونية والكتب الصوتية في تطبيق سهل الاستخدام",
+    ),
+    "onbaordingbookstitle": MessageLookupByLibrary.simpleMessage(
+      "اقرأ، اكتشف، اهرب",
+    ),
+    "onbaordingchatsubtitle": MessageLookupByLibrary.simpleMessage(
+      "ارسل رسائل فورية إلى الأصدقاء والعائلة أو الفرق بالنصوص والصور والصوت — في أي وقت وأي مكان",
+    ),
+    "onbaordingchattitle": MessageLookupByLibrary.simpleMessage(
+      "تواصل، شارك، تحدث",
+    ),
+    "onbaordingnotessubtitle": MessageLookupByLibrary.simpleMessage(
+      "قم بتدوين الأفكار والتذكيرات وقوائم المهام بسرعة للحفاظ على تنظيم حياتك وأفكارك في مكان واحد",
+    ),
+    "onbaordingnotestitle": MessageLookupByLibrary.simpleMessage(
+      "سجّل، نظّم، تذكّر",
+    ),
+    "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "takenotes": MessageLookupByLibrary.simpleMessage("دون ملاحظات"),
+    "whathapend": MessageLookupByLibrary.simpleMessage("ماذا يحدث"),
   };
 }

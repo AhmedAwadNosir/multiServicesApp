@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/theme/theme.dart';
+import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider with ChangeNotifier {
@@ -14,10 +15,10 @@ class ThemeProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     if (_themeData == AppTheming.ligtMode) {
       _themeData = AppTheming.darkMode;
-      prefs.setBool('isDarkMode', true);
+      prefs.setBool(AppConstants.isDarkMode, true);
     } else {
       _themeData = AppTheming.ligtMode;
-      prefs.setBool('isDarkMode', false);
+      prefs.setBool(AppConstants.isDarkMode, false);
     }
     notifyListeners();
   }
