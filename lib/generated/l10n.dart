@@ -169,6 +169,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome to our app!`
+  String get Welcometoourapp {
+    return Intl.message(
+      'Welcome to our app!',
+      name: 'Welcometoourapp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get Login {
+    return Intl.message('Login', name: 'Login', desc: '', args: []);
+  }
+
+  /// `email`
+  String get email {
+    return Intl.message('email', name: 'email', desc: '', args: []);
+  }
+
+  /// `password`
+  String get password {
+    return Intl.message('password', name: 'password', desc: '', args: []);
+  }
+
+  /// `field is required`
+  String get fieldisrequired {
+    return Intl.message(
+      'field is required',
+      name: 'fieldisrequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password`
+  String get ForgotPassword {
+    return Intl.message(
+      'Forgot Password',
+      name: 'ForgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login with google`
+  String get Loginwithgoogle {
+    return Intl.message(
+      'Login with google',
+      name: 'Loginwithgoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `if you don't have account?, `
+  String get ifyoudonothaveaccount {
+    return Intl.message(
+      'if you don`t have account?, ',
+      name: 'ifyoudonothaveaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get signUp {
+    return Intl.message('Sign up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Create your own account!`
+  String get createyourownaccount {
+    return Intl.message(
+      'Create your own account!',
+      name: 'createyourownaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `firstname`
+  String get firstname {
+    return Intl.message('firstname', name: 'firstname', desc: '', args: []);
+  }
+
+  /// `lastname`
+  String get lastname {
+    return Intl.message('lastname', name: 'lastname', desc: '', args: []);
+  }
+
+  /// `if you have account,`
+  String get ifyouhaveaccount {
+    return Intl.message(
+      'if you have account,',
+      name: 'ifyouhaveaccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

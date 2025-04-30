@@ -11,5 +11,20 @@
       "onbaordingchattitle": "تواصل، شارك، تحدث",
       "onbaordingchatsubtitle": "ارسل رسائل فورية إلى الأصدقاء والعائلة أو الفرق بالنصوص والصور والصوت — في أي وقت وأي مكان",
       "onbaordingnotestitle": "سجّل، نظّم، تذكّر",
-      "onbaordingnotessubtitle": "قم بتدوين الأفكار والتذكيرات وقوائم المهام بسرعة للحفاظ على تنظيم حياتك وأفكارك في مكان واحد"
+      "onbaordingnotessubtitle": "قم بتدوين الأفكار والتذكيرات وقوائم المهام بسرعة للحفاظ على تنظيم حياتك وأفكارك في مكان واحد",
+      "Welcometoourapp": "أهلاً بيك في تطبيقنا!",
+      "Login": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة السر",
+      "fieldisrequired": "الحقول دي مطلوبة",
+      "ForgotPassword": "نسيت كلمة السر؟",
+      "Loginwithgoogle": "سجل دخول بجوجل",
+      "ifyoudonothaveaccount": " إذا لم يكن لديك حساب؟",
+      "signUp":"سجّل حساب",
+      "createyourownaccount": "أنشئ حسابك الخاص!",
+      "firstname": "الاسم الأول",
+      "lastname": "اسم العائلة",
+      "ifyouhaveaccount": "إذا كان لديك حساب،"
+
+    
 }

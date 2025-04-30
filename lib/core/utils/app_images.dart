@@ -4,4 +4,5 @@ abstract class AppImages {
   static const chatLogo = 'assets/images/chatlogo.jpg';
   static const newsLogo = 'assets/images/newslogo.jpg';
   static const notesLogo = 'assets/images/noteslogo.jpg';
+  static const googleIcone = "assets/images/googleIcon.png";
 }

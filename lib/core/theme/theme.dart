@@ -17,7 +17,7 @@ abstract class AppTheming {
     colorScheme: ColorScheme.dark(
       surface: Color(0xFF191925), //background color
       primary: Color.fromARGB(255, 48, 72, 189),
-      secondary: Colors.black,
+      secondary: Colors.white,
       tertiary: Color(0xffc31331), //color for big sub title
       shadow: Color(0xffcbb2ab),
       onPrimary: Colors.white,

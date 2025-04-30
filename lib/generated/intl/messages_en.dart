@@ -22,10 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
+    "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "Loginwithgoogle": MessageLookupByLibrary.simpleMessage(
+      "Login with google",
+    ),
+    "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
+      "Welcome to our app!",
+    ),
     "chatwithfriends": MessageLookupByLibrary.simpleMessage(
       "chat with friends",
     ),
+    "createyourownaccount": MessageLookupByLibrary.simpleMessage(
+      "Create your own account!",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("email"),
     "explorebooks": MessageLookupByLibrary.simpleMessage("explore books"),
+    "fieldisrequired": MessageLookupByLibrary.simpleMessage(
+      "field is required",
+    ),
+    "firstname": MessageLookupByLibrary.simpleMessage("firstname"),
+    "ifyoudonothaveaccount": MessageLookupByLibrary.simpleMessage(
+      "if you don`t have account?, ",
+    ),
+    "ifyouhaveaccount": MessageLookupByLibrary.simpleMessage(
+      "if you have account,",
+    ),
+    "lastname": MessageLookupByLibrary.simpleMessage("lastname"),
     "onbaordingNewssubtitle": MessageLookupByLibrary.simpleMessage(
       "Get the latest headlines, breaking news, and personalized stories from around the world — right at your fingertips",
     ),
@@ -50,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "onbaordingnotestitle": MessageLookupByLibrary.simpleMessage(
       "Capture, Organize, Remember",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("password"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "skip": MessageLookupByLibrary.simpleMessage("skip"),
     "takenotes": MessageLookupByLibrary.simpleMessage("take notes"),
     "whathapend": MessageLookupByLibrary.simpleMessage("what hapned"),

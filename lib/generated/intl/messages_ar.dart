@@ -22,8 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
+    "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "Loginwithgoogle": MessageLookupByLibrary.simpleMessage("سجل دخول بجوجل"),
+    "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
+      "أهلاً بيك في تطبيقنا!",
+    ),
     "chatwithfriends": MessageLookupByLibrary.simpleMessage("تحدث مع الأصدقاء"),
+    "createyourownaccount": MessageLookupByLibrary.simpleMessage(
+      "أنشئ حسابك الخاص!",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "explorebooks": MessageLookupByLibrary.simpleMessage("استكشف الكتب"),
+    "fieldisrequired": MessageLookupByLibrary.simpleMessage("الحقول دي مطلوبة"),
+    "firstname": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
+    "ifyoudonothaveaccount": MessageLookupByLibrary.simpleMessage(
+      " إذا لم يكن لديك حساب؟",
+    ),
+    "ifyouhaveaccount": MessageLookupByLibrary.simpleMessage(
+      "إذا كان لديك حساب،",
+    ),
+    "lastname": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
     "onbaordingNewssubtitle": MessageLookupByLibrary.simpleMessage(
       "تابع آخر الأخبار، العناوين العاجلة، والمقالات أولاً بأول",
     ),
@@ -48,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "onbaordingnotestitle": MessageLookupByLibrary.simpleMessage(
       "سجّل، نظّم، تذكّر",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+    "signUp": MessageLookupByLibrary.simpleMessage("سجّل حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "takenotes": MessageLookupByLibrary.simpleMessage("دون ملاحظات"),
     "whathapend": MessageLookupByLibrary.simpleMessage("ماذا يحدث"),

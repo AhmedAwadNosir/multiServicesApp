@@ -11,5 +11,18 @@
     "onbaordingchattitle":"Connect, Share, Communicate",
     "onbaordingchatsubtitle":"Instantly message friends, family, or teams with text, images, and voice — anytime, anywhere",
     "onbaordingnotestitle":"Capture, Organize, Remember",
-    "onbaordingnotessubtitle":"Quickly jot down ideas, reminders, and to-do lists to keep your life organized and your thoughts in one place"
+    "onbaordingnotessubtitle":"Quickly jot down ideas, reminders, and to-do lists to keep your life organized and your thoughts in one place",
+    "Welcometoourapp":"Welcome to our app!",
+    "Login":"Login",
+    "email":"email",
+    "password":"password",
+    "fieldisrequired":"field is required",
+    "ForgotPassword":"Forgot Password",
+    "Loginwithgoogle":"Login with google",
+    "ifyoudonothaveaccount":"if you don`t have account?, ",
+    "signUp":"Sign up",
+    "createyourownaccount":"Create your own account!",
+    "firstname":"firstname",
+    "lastname":"lastname",
+    "ifyouhaveaccount":"if you have account,"
 }
