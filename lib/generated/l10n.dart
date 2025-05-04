@@ -250,6 +250,11 @@ class S {
     );
   }
 
+  /// `userName`
+  String get userName {
+    return Intl.message('userName', name: 'userName', desc: '', args: []);
+  }
+
   /// `firstname`
   String get firstname {
     return Intl.message('firstname', name: 'firstname', desc: '', args: []);
@@ -265,6 +270,76 @@ class S {
     return Intl.message(
       'if you have account,',
       name: 'ifyouhaveaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `choos profile photo`
+  String get choosprofilephoto {
+    return Intl.message(
+      'choos profile photo',
+      name: 'choosprofilephoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the email address you used when you joined and we’ll send you instructions to reset your password.`
+  String get entertheemailaddressyouused {
+    return Intl.message(
+      'Enter the email address you used when you joined and we’ll send you instructions to reset your password.',
+      name: 'entertheemailaddressyouused',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get enteryouremail {
+    return Intl.message(
+      'Enter your email',
+      name: 'enteryouremail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You remember your password?`
+  String get yourememberyourpassword {
+    return Intl.message(
+      'You remember your password?',
+      name: 'yourememberyourpassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request password resset`
+  String get requestpasswordresset {
+    return Intl.message(
+      'Request password resset',
+      name: 'requestpasswordresset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We sent resset password email to your email box go and resset your password`
+  String get Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword {
+    return Intl.message(
+      'We sent resset password email to your email box go and resset your password',
+      name: 'Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword',
       desc: '',
       args: [],
     );

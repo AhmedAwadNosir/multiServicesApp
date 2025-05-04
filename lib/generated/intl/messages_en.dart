@@ -30,13 +30,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "Welcome to our app!",
     ),
+    "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":
+        MessageLookupByLibrary.simpleMessage(
+          "We sent resset password email to your email box go and resset your password",
+        ),
     "chatwithfriends": MessageLookupByLibrary.simpleMessage(
       "chat with friends",
+    ),
+    "choosprofilephoto": MessageLookupByLibrary.simpleMessage(
+      "choos profile photo",
     ),
     "createyourownaccount": MessageLookupByLibrary.simpleMessage(
       "Create your own account!",
     ),
     "email": MessageLookupByLibrary.simpleMessage("email"),
+    "entertheemailaddressyouused": MessageLookupByLibrary.simpleMessage(
+      "Enter the email address you used when you joined and we’ll send you instructions to reset your password.",
+    ),
+    "enteryouremail": MessageLookupByLibrary.simpleMessage("Enter your email"),
     "explorebooks": MessageLookupByLibrary.simpleMessage("explore books"),
     "fieldisrequired": MessageLookupByLibrary.simpleMessage(
       "field is required",
@@ -74,9 +85,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Capture, Organize, Remember",
     ),
     "password": MessageLookupByLibrary.simpleMessage("password"),
+    "requestpasswordresset": MessageLookupByLibrary.simpleMessage(
+      "Request password resset",
+    ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "skip": MessageLookupByLibrary.simpleMessage("skip"),
     "takenotes": MessageLookupByLibrary.simpleMessage("take notes"),
+    "userName": MessageLookupByLibrary.simpleMessage("userName"),
     "whathapend": MessageLookupByLibrary.simpleMessage("what hapned"),
+    "yourememberyourpassword": MessageLookupByLibrary.simpleMessage(
+      "You remember your password?",
+    ),
   };
 }

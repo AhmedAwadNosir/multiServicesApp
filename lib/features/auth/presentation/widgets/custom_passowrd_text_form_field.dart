@@ -6,14 +6,14 @@ class CustomPasswordTextFormField extends StatefulWidget {
     super.key,
     required this.title,
     this.onChanged,
-    this.onSubmited,
+    this.onSaved,
     this.titleColor,
     this.titleSpace,
     this.controller,
   });
   final String title;
   final void Function(String)? onChanged;
-  final void Function(String)? onSubmited;
+  final Function(String?)? onSaved;
   final TextEditingController? controller;
   final Color? titleColor;
   final double? titleSpace;
@@ -33,7 +33,7 @@ class _CustomPasswordTextFormFieldState
       obscureText: obsecureText,
       controller: widget.controller,
       onChanged: widget.onChanged,
-      onFieldSubmitted: widget.onSubmited,
+      onSaved: widget.onSaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return "Field is Required";

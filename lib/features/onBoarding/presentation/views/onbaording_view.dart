@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
-import 'package:multiservices_app/features/auth/login/presentation/views/login_view.dart';
+import 'package:multiservices_app/features/auth/presentation/views/login_view.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/widgets/onbaording_view_body.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';

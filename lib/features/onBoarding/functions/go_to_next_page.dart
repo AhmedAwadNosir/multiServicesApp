@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:multiservices_app/core/utils/app_constants.dart';
-import 'package:multiservices_app/features/auth/login/presentation/views/login_view.dart';
+import 'package:multiservices_app/features/auth/presentation/views/login_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void goToNextPage({

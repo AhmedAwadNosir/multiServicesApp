@@ -22,9 +22,15 @@
       "ifyoudonothaveaccount": " إذا لم يكن لديك حساب؟",
       "signUp":"سجّل حساب",
       "createyourownaccount": "أنشئ حسابك الخاص!",
+      "userName": "اسم المستخدم",
       "firstname": "الاسم الأول",
       "lastname": "اسم العائلة",
-      "ifyouhaveaccount": "إذا كان لديك حساب،"
-
-    
+      "ifyouhaveaccount": "إذا كان لديك حساب،",
+      "choosprofilephoto": "اختر صوره ملفك",
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "entertheemailaddressyouused": "أدخل عنوان البريد الإلكتروني الذي استخدمته عند التسجيل وسنرسل لك تعليمات لإعادة تعيين كلمة المرور.",
+      "enteryouremail": "أدخل بريدك الإلكتروني",
+      "yourememberyourpassword": "هل تتذكر كلمة المرور الخاصة بك؟",
+      "requestpasswordresset": "طلب إعادة تعيين كلمة المرور",
+      "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":"لقد أرسلنا رسالة لإعادة تعيين كلمة المرور إلى بريدك الإلكتروني. يرجى التحقق من بريدك الإلكتروني وإعادة تعيين كلمة المرور."
 }

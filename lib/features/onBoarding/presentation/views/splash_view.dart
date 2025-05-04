@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
-import 'package:multiservices_app/core/theme/theme_provider.dart';
 import 'package:multiservices_app/features/onBoarding/functions/splash_navigation_controler.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/widgets/custom_circle_container.dart';
 import 'package:multiservices_app/generated/l10n.dart';
-import 'package:multiservices_app/l10n/localization_provider.dart';
-import 'package:provider/provider.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -44,7 +41,7 @@ class _SplashViewState extends State<SplashView> {
             left: screenWidth * 0.08,
             child: CustomCirclarContainer(
               title: lang.explorebooks,
-              color: Theme.of(context).colorScheme.secondary,
+              color: Colors.deepOrange,
             ),
           ),
           Positioned(
@@ -60,7 +57,7 @@ class _SplashViewState extends State<SplashView> {
             right: screenWidth * 0.08,
             child: CustomCirclarContainer(
               title: lang.chatwithfriends,
-              color: Theme.of(context).colorScheme.onTertiary,
+              color: Colors.lightGreenAccent,
             ),
           ),
           Positioned(

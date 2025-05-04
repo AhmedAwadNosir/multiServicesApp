@@ -1,15 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/core/theme/theme_provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
-import 'package:multiservices_app/core/utils/widgets/test_language_and_thiming_widget.dart';
-import 'package:multiservices_app/features/auth/login/presentation/views/sign_up_view.dart';
-import 'package:multiservices_app/features/auth/login/presentation/widgets/custom_button.dart';
-import 'package:multiservices_app/features/auth/login/presentation/widgets/custom_passowrd_text_form_field.dart';
-import 'package:multiservices_app/features/auth/login/presentation/widgets/custom_social_auth_button.dart';
-import 'package:multiservices_app/features/auth/login/presentation/widgets/custom_text_form_filed.dart';
+import 'package:multiservices_app/features/auth/presentation/views/forgot_password_view.dart';
+import 'package:multiservices_app/features/auth/presentation/views/sign_up_view.dart';
+import 'package:multiservices_app/features/auth/presentation/widgets/custom_button.dart';
+import 'package:multiservices_app/features/auth/presentation/widgets/custom_passowrd_text_form_field.dart';
+import 'package:multiservices_app/features/auth/presentation/widgets/custom_social_auth_button.dart';
+import 'package:multiservices_app/features/auth/presentation/widgets/custom_text_form_filed.dart';
+import 'package:multiservices_app/features/auth/states_manager/sign_in/signin_cubit.dart';
+import 'package:multiservices_app/features/auth/states_manager/sign_in_google/signingoogle_cubit.dart';
 import 'package:multiservices_app/generated/l10n.dart';
-import 'package:multiservices_app/l10n/localization_provider.dart';
-import 'package:provider/provider.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -21,6 +22,8 @@ class LoginViewBody extends StatefulWidget {
 class _LoginViewBodyState extends State<LoginViewBody> {
   GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  String email = "";
+  String password = "";
   @override
   Widget build(BuildContext context) {
     final screenHiegt = MediaQuery.of(context).size.height;
@@ -38,7 +41,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TestLnaguageAndThimingWidget(),
               SizedBox(height: screenHiegt * 0.15),
               Center(
                 child: Text(
@@ -53,15 +55,27 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 12),
-              CustomTextFormField(label: S.of(context).email),
+              CustomTextFormField(
+                label: S.of(context).email,
+                onSaved: (value) {
+                  email = value!;
+                },
+              ),
               SizedBox(height: 12),
-              CustomPasswordTextFormField(title: S.of(context).password),
+              CustomPasswordTextFormField(
+                title: S.of(context).password,
+                onSaved: (value) {
+                  password = value!;
+                },
+              ),
               SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, ForgotPasswordView.id);
+                    },
                     child: Text(
                       S.of(context).ForgotPassword,
                       style: TextStyle(
@@ -77,9 +91,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   height: 50,
                   width: 150,
                   child: CustomButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
+                        await FirebaseAuth.instance.signOut();
+                        BlocProvider.of<SigninCubit>(
+                          context,
+                        ).signIn(emailAddress: email, password: password);
                       } else {
                         autovalidateMode = AutovalidateMode.always;
                         setState(() {});
@@ -95,7 +113,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   width: screenWidth * 0.55,
                   height: 50,
                   child: CustomSocialAuthButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      BlocProvider.of<SigningoogleCubit>(
+                        context,
+                      ).signInGoogle();
+                    },
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     buttonName: S.of(context).Loginwithgoogle,
                     buttonNameColor: Theme.of(context).colorScheme.secondary,

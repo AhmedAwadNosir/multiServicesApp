@@ -28,11 +28,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "أهلاً بيك في تطبيقنا!",
     ),
+    "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":
+        MessageLookupByLibrary.simpleMessage(
+          "لقد أرسلنا رسالة لإعادة تعيين كلمة المرور إلى بريدك الإلكتروني. يرجى التحقق من بريدك الإلكتروني وإعادة تعيين كلمة المرور.",
+        ),
     "chatwithfriends": MessageLookupByLibrary.simpleMessage("تحدث مع الأصدقاء"),
+    "choosprofilephoto": MessageLookupByLibrary.simpleMessage("اختر صوره ملفك"),
     "createyourownaccount": MessageLookupByLibrary.simpleMessage(
       "أنشئ حسابك الخاص!",
     ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "entertheemailaddressyouused": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوان البريد الإلكتروني الذي استخدمته عند التسجيل وسنرسل لك تعليمات لإعادة تعيين كلمة المرور.",
+    ),
+    "enteryouremail": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني",
+    ),
     "explorebooks": MessageLookupByLibrary.simpleMessage("استكشف الكتب"),
     "fieldisrequired": MessageLookupByLibrary.simpleMessage("الحقول دي مطلوبة"),
     "firstname": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
@@ -68,9 +79,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "سجّل، نظّم، تذكّر",
     ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+    "requestpasswordresset": MessageLookupByLibrary.simpleMessage(
+      "طلب إعادة تعيين كلمة المرور",
+    ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage(
+      "إعادة تعيين كلمة المرور",
+    ),
     "signUp": MessageLookupByLibrary.simpleMessage("سجّل حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "takenotes": MessageLookupByLibrary.simpleMessage("دون ملاحظات"),
+    "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "whathapend": MessageLookupByLibrary.simpleMessage("ماذا يحدث"),
+    "yourememberyourpassword": MessageLookupByLibrary.simpleMessage(
+      "هل تتذكر كلمة المرور الخاصة بك؟",
+    ),
   };
 }

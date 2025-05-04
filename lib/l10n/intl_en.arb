@@ -22,7 +22,15 @@
     "ifyoudonothaveaccount":"if you don`t have account?, ",
     "signUp":"Sign up",
     "createyourownaccount":"Create your own account!",
+    "userName": "userName",
     "firstname":"firstname",
     "lastname":"lastname",
-    "ifyouhaveaccount":"if you have account,"
+    "ifyouhaveaccount":"if you have account,",
+    "choosprofilephoto":"choos profile photo",
+    "resetPassword":"Reset Password",
+    "entertheemailaddressyouused": "Enter the email address you used when you joined and we’ll send you instructions to reset your password.",
+    "enteryouremail":"Enter your email",
+    "yourememberyourpassword": "You remember your password?",
+    "requestpasswordresset":"Request password resset",
+    "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":"We sent resset password email to your email box go and resset your password"
 }
