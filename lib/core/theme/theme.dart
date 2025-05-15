@@ -9,7 +9,7 @@ abstract class AppTheming {
       primary: Color(0xffffc529),
       secondary: Color(0xff272d2f),
       tertiary: Color(0xfffe724c), //color for big sub title
-      shadow: Color(0xffd7d7d7), // color for smal sub title
+      shadow: Color.fromARGB(255, 184, 179, 179), // color for smal sub title
     ),
   );
   static ThemeData darkMode = ThemeData(

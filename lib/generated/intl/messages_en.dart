@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "BestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
+    "FreePreview": MessageLookupByLibrary.simpleMessage("Free Preview"),
+    "Hi": MessageLookupByLibrary.simpleMessage("Hi, "),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "Loginwithgoogle": MessageLookupByLibrary.simpleMessage(
       "Login with google",
@@ -34,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "We sent resset password email to your email box go and resset your password",
         ),
+    "YouCanAlsoLike": MessageLookupByLibrary.simpleMessage("You Can Also Like"),
+    "books": MessageLookupByLibrary.simpleMessage("books"),
+    "chat": MessageLookupByLibrary.simpleMessage("chat"),
     "chatwithfriends": MessageLookupByLibrary.simpleMessage(
       "chat with friends",
     ),
@@ -60,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "if you have account,",
     ),
     "lastname": MessageLookupByLibrary.simpleMessage("lastname"),
+    "news": MessageLookupByLibrary.simpleMessage("news"),
+    "notes": MessageLookupByLibrary.simpleMessage("notes"),
     "onbaordingNewssubtitle": MessageLookupByLibrary.simpleMessage(
       "Get the latest headlines, breaking news, and personalized stories from around the world — right at your fingertips",
     ),

@@ -344,6 +344,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Hi, `
+  String get Hi {
+    return Intl.message('Hi, ', name: 'Hi', desc: '', args: []);
+  }
+
+  /// `Best Seller`
+  String get BestSeller {
+    return Intl.message('Best Seller', name: 'BestSeller', desc: '', args: []);
+  }
+
+  /// `books`
+  String get books {
+    return Intl.message('books', name: 'books', desc: '', args: []);
+  }
+
+  /// `news`
+  String get news {
+    return Intl.message('news', name: 'news', desc: '', args: []);
+  }
+
+  /// `chat`
+  String get chat {
+    return Intl.message('chat', name: 'chat', desc: '', args: []);
+  }
+
+  /// `notes`
+  String get notes {
+    return Intl.message('notes', name: 'notes', desc: '', args: []);
+  }
+
+  /// `Free Preview`
+  String get FreePreview {
+    return Intl.message(
+      'Free Preview',
+      name: 'FreePreview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Can Also Like`
+  String get YouCanAlsoLike {
+    return Intl.message(
+      'You Can Also Like',
+      name: 'YouCanAlsoLike',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

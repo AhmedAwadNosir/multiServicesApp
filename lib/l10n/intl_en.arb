@@ -32,5 +32,13 @@
     "enteryouremail":"Enter your email",
     "yourememberyourpassword": "You remember your password?",
     "requestpasswordresset":"Request password resset",
-    "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":"We sent resset password email to your email box go and resset your password"
+    "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":"We sent resset password email to your email box go and resset your password",
+    "Hi":"Hi, ",
+    "BestSeller":"Best Seller",
+    "books":"books",
+    "news":"news",
+    "chat":"chat",
+    "notes":"notes",
+    "FreePreview":"Free Preview",
+    "YouCanAlsoLike":"You Can Also Like"
 }

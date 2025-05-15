@@ -32,5 +32,13 @@
       "enteryouremail": "أدخل بريدك الإلكتروني",
       "yourememberyourpassword": "هل تتذكر كلمة المرور الخاصة بك؟",
       "requestpasswordresset": "طلب إعادة تعيين كلمة المرور",
-      "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":"لقد أرسلنا رسالة لإعادة تعيين كلمة المرور إلى بريدك الإلكتروني. يرجى التحقق من بريدك الإلكتروني وإعادة تعيين كلمة المرور."
+      "Wesentressetpasswordemailtoyouremailboxgoandressetyourpassword":"لقد أرسلنا رسالة لإعادة تعيين كلمة المرور إلى بريدك الإلكتروني. يرجى التحقق من بريدك الإلكتروني وإعادة تعيين كلمة المرور.",
+      "Hi":"اهلا, ",
+      "BestSeller": "الأكثر مبيعًا",
+      "books": "كتب",
+      "news": "أخبار",
+      "chat": "دردشة",
+      "notes": "ملاحظات",
+      "FreePreview": "معاينة مجانية",
+      "YouCanAlsoLike": "قد يعجبك أيضًا"
 }

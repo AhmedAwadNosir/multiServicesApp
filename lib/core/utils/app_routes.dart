@@ -9,6 +9,7 @@ import 'package:multiservices_app/features/auth/states_manager/sende_resset_pass
 import 'package:multiservices_app/features/auth/states_manager/sign_in/signin_cubit.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_in_google/signingoogle_cubit.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_up/signup_cubit.dart';
+import 'package:multiservices_app/features/home/book_details/views/book_details_view.dart';
 import 'package:multiservices_app/features/home/presentation/views/home_view.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/views/onbaording_view.dart';
 
