@@ -1,23 +1,25 @@
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class ApiServices {
-  final String _baseUrl = 'https://project2.amit-learning.com/api';
+  final String baseUrl;
+  // final String _baseUrl = 'https://project2.amit-learning.com/api';
   final Dio dio;
 
-  ApiServices({required this.dio});
+  ApiServices({required this.dio, required this.baseUrl});
 
-  Future<Map<String, dynamic>> get(
-      {required String endPoint, String? token}) async {
+  Future<Map<String, dynamic>> get({
+    required String endPoint,
+    String? token,
+  }) async {
     Map<String, String> headers = {};
     if (token != null) {
-      headers.addAll({
-        "Authorization": "Bearer $token",
-      });
+      headers.addAll({"Authorization": "Bearer $token"});
     }
-    var response =
-        await dio.get("$_baseUrl$endPoint", options: Options(headers: headers));
+    var response = await dio.get(
+      "$baseUrl$endPoint",
+      options: Options(headers: headers),
+    );
     return response.data;
   }
 
@@ -28,15 +30,13 @@ class ApiServices {
   }) async {
     Map<String, String> headers = {};
     if (token != null) {
-      headers.addAll({
-        "Authorization": "Bearer $token",
-      });
+      headers.addAll({"Authorization": "Bearer $token"});
     }
-    var response = await dio.post("$_baseUrl$endPoint",
-        options: Options(
-          headers: headers,
-        ),
-        data: body);
+    var response = await dio.post(
+      "$baseUrl$endPoint",
+      options: Options(headers: headers),
+      data: body,
+    );
     return response.data;
   }
 
@@ -73,13 +73,14 @@ class ApiServices {
   }) async {
     Map<String, String> headers = {};
     if (token != null) {
-      headers.addAll({
-        "Authorization": "Bearer $token",
-      });
+      headers.addAll({"Authorization": "Bearer $token"});
     }
 
-    var response = await dio.put("$_baseUrl$endPoint",
-        options: Options(headers: headers), data: body);
+    var response = await dio.put(
+      "$baseUrl$endPoint",
+      options: Options(headers: headers),
+      data: body,
+    );
 
     return response.data;
   }

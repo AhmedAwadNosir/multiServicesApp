@@ -8,5 +8,5 @@ Future<UserModal> getUserData() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   userName = prefs.getString(AppConstants.userNameKey);
   userPhoto = prefs.getString(AppConstants.profileImageKey);
-  return UserModal(userName: userName!, profilImageLink: userPhoto!);
+  return UserModal(userName: userName ?? "", profilImageLink: userPhoto!);
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/features/home/data/models/BookModel.dart';
-
+import 'package:multiservices_app/features/home/books/data/models/BookModel.dart';
 import '../views/book_details_view.dart';
 import 'bottom_related_books_item.dart';
 

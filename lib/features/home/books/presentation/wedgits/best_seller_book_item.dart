@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/features/home/book_details/views/book_details_view.dart';
-import 'package:multiservices_app/features/home/data/models/BookModel.dart';
+import 'package:multiservices_app/features/home/books/data/models/BookModel.dart';
+import 'package:multiservices_app/features/home/books/presentation/views/book_details_view.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -34,21 +36,30 @@ class BestSellerBookItem extends StatelessWidget {
                           Locale('ar')
                       ? 32
                       : 0,
-              top: 4,
               bottom: 4,
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: SizedBox(
-                height: 140,
-                child: AspectRatio(
-                  aspectRatio: 112.5 / 168,
-                  child: CachedNetworkImage(
-                    fit: BoxFit.fill,
-                    errorWidget: (context, _, __) {
-                      return const Icon(Icons.error, color: Colors.white);
-                    },
-                    imageUrl: "${book.image}",
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+
+                child: SizedBox(
+                  height: 135,
+                  child: AspectRatio(
+                    aspectRatio: 112.5 / 168,
+                    child: CachedNetworkImage(
+                      fit: BoxFit.fill,
+                      errorWidget: (context, _, __) {
+                        return const Icon(Icons.error, color: Colors.white);
+                      },
+                      imageUrl: "${book.image}",
+                    ),
                   ),
                 ),
               ),
@@ -59,14 +70,22 @@ class BestSellerBookItem extends StatelessWidget {
             children: [
               SizedBox(
                 width: 230,
+                height: 60,
                 child: Text(
                   book.headline ?? " ",
+
+                  overflow: TextOverflow.clip,
                   style: const TextStyle(fontSize: 22),
                 ),
               ),
-              Text(
-                book.author ?? " ",
-                style: const TextStyle(fontSize: 14, color: Colors.grey),
+              SizedBox(
+                width: 230,
+                child: Text(
+                  book.author ?? " ",
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: false,
+                  style: const TextStyle(fontSize: 14, color: Colors.grey),
+                ),
               ),
               Row(
                 children: [

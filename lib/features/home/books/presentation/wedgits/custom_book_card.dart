@@ -1,9 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
+import 'package:multiservices_app/features/home/books/data/models/BookModel.dart';
 
 class CustomBookCard extends StatelessWidget {
-  const CustomBookCard({super.key});
-
+  const CustomBookCard({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     final screenHight = MediaQuery.of(context).size.height;
@@ -11,13 +13,27 @@ class CustomBookCard extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: screenHight * 0.23,
-          width: screenWidth * 0.35,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(AppImages.newsLogo),
+            border: Border.all(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: SizedBox(
+              height: 250,
+              child: AspectRatio(
+                aspectRatio: 112.5 / 168,
+                child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  errorWidget: (context, _, __) {
+                    return const Icon(Icons.error, color: Colors.white);
+                  },
+                  imageUrl: "${bookModel.image}",
+                ),
+              ),
             ),
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/features/home/data/models/BookModel.dart';
+import 'package:multiservices_app/features/home/books/data/models/BookModel.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
 import 'package:provider/provider.dart';
@@ -56,6 +56,7 @@ class _BookDetailsItemState extends State<BookDetailsItem> {
           padding: EdgeInsets.only(bottom: 10),
           child: Text(
             "${widget.bookDetails.author}",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24,
               color: Theme.of(context).colorScheme.primary,

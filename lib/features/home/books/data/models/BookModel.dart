@@ -7,6 +7,7 @@ class BookModel {
   final String? price;
   final num? rating;
   final int? ratingCount;
+  final String? previewLink;
 
   BookModel({
     this.image,
@@ -15,17 +16,20 @@ class BookModel {
     @required this.price,
     @required this.rating,
     @required this.ratingCount,
+    @required this.previewLink,
   });
   factory BookModel.fromjson(dynamic jsonData) {
     return BookModel(
-      image: jsonData['volumeInfo']['imageLinks']?['thumbnail'] ??
+      image:
+          jsonData['volumeInfo']['imageLinks']?['thumbnail'] ??
           "https://th.bing.com/th/id/OIP.9zpFpYq2xuDkiJevIxpJ4gHaQd?pid=ImgDet&rs=1",
-      headline: jsonData["volumeInfo"]["title"],
-      author: jsonData["volumeInfo"]["authors"][0],
+      headline: jsonData["volumeInfo"]?["title"] ?? "",
+      author: jsonData["volumeInfo"]?["authors"]?[0] ?? "",
       price:
           jsonData["volumeInfo"]["listPrice"]?["amount"].toString() ?? 'FREE',
       rating: jsonData["volumeInfo"]["averageRating"] ?? 0,
       ratingCount: jsonData['volumeInfo']['ratingsCount'] ?? 0,
+      previewLink: jsonData['volumeInfo']['previewLink'] ?? "",
     );
   }
 }

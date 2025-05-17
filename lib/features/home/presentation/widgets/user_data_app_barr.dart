@@ -32,7 +32,7 @@ class UserDataAppBarr extends StatelessWidget {
             ),
             SizedBox(width: 8),
             Text(
-              "${S.of(context).Hi}${snapshot.data!.userName}😎",
+              "${S.of(context).Hi}${snapshot.data?.userName ?? ""}😎",
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             Spacer(),

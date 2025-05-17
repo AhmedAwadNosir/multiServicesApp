@@ -1,9 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:multiservices_app/core/theme/theme.dart';
 import 'package:multiservices_app/core/theme/theme_provider.dart';
 import 'package:multiservices_app/core/utils/app_routes.dart';
+import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
+import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
+import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/views/splash_view.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
@@ -41,20 +44,29 @@ class MultiServicesApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Provider.of<LocalizationProvider>(context).locale,
-      localizationsDelegates: [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => GetTopBooksCubit(BookRepoImpl())),
+        BlocProvider(
+          create: (context) => GetBestSellerBooksCubit(BookRepoImpl()),
+        ),
       ],
-      supportedLocales: S.delegate.supportedLocales,
 
-      debugShowCheckedModeBanner: false,
-      theme: Provider.of<ThemeProvider>(context, listen: true).themeData,
-      home: SplashView(),
-      routes: AppRoutes.routes,
+      child: MaterialApp(
+        locale: Provider.of<LocalizationProvider>(context).locale,
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+
+        debugShowCheckedModeBanner: false,
+        theme: Provider.of<ThemeProvider>(context, listen: true).themeData,
+        home: SplashView(),
+        routes: AppRoutes.routes,
+      ),
     );
   }
 }
