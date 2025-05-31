@@ -49,5 +49,13 @@
       "Science": "العلوم",
       "Sports": "الرياضة",
       "NoInternetConnection":"لا يوجد اتصال بالإنترنت",
-      "Pleasecheckyourinternetsettingsandtryagain":"يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى."
+      "Pleasecheckyourinternetsettingsandtryagain":"يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
+      "NoNotesFound": "لم يتم العثور على ملاحظات؟",
+      "AddOne": "أضف واحدة!",
+      "Areyoursureyouwantdelletethisnote": "هل أنت متأكد أنك تريد حذف هذه الملاحظة؟",
+      "Dellete": "حذف",
+      "Cancel": "إلغاء",
+      "Title": "العنوان",
+      "Content": "المحتوى",
+      "Add": "إضافة"
 }

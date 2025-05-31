@@ -22,9 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Add": MessageLookupByLibrary.simpleMessage("Add"),
+    "AddOne": MessageLookupByLibrary.simpleMessage("Add One !"),
+    "Areyoursureyouwantdelletethisnote": MessageLookupByLibrary.simpleMessage(
+      "Are your sure you want dellete this note ?",
+    ),
     "BestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
     "Business": MessageLookupByLibrary.simpleMessage("Business"),
+    "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "Cloud": MessageLookupByLibrary.simpleMessage("Cloud"),
+    "Content": MessageLookupByLibrary.simpleMessage("Content"),
+    "Dellete": MessageLookupByLibrary.simpleMessage("Dellete"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("Free Preview"),
@@ -38,12 +46,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet Connection",
     ),
+    "NoNotesFound": MessageLookupByLibrary.simpleMessage("No Notes Found ?"),
     "Pleasecheckyourinternetsettingsandtryagain":
         MessageLookupByLibrary.simpleMessage(
           "Please check your internet settings and try again.",
         ),
     "Science": MessageLookupByLibrary.simpleMessage("Science"),
     "Sports": MessageLookupByLibrary.simpleMessage("Sports"),
+    "Title": MessageLookupByLibrary.simpleMessage("Title"),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "Welcome to our app!",
     ),

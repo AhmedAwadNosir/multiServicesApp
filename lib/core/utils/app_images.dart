@@ -12,4 +12,6 @@ abstract class AppImages {
       "assets/images/no-image-available-sign-vector-25152466.jpg";
   static const science = "assets/images/science.jpeg";
   static const sports = "assets/images/Sports.jpeg";
+  static const noNotesFound = "assets/images/noFilesFound.png";
+  static const addNote = "assets/images/createnote.png";
 }

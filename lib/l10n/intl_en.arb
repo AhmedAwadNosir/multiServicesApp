@@ -49,5 +49,13 @@
     "Science":"Science",
     "Sports":"Sports",
     "NoInternetConnection":"No Internet Connection",
-    "Pleasecheckyourinternetsettingsandtryagain":"Please check your internet settings and try again."
+    "Pleasecheckyourinternetsettingsandtryagain":"Please check your internet settings and try again.",
+    "NoNotesFound":"No Notes Found ?",
+    "AddOne":"Add One !",
+    "Areyoursureyouwantdelletethisnote":"Are your sure you want dellete this note ?",
+    "Dellete":"Dellete",
+    "Cancel":"Cancel",
+    "Title":"Title",
+    "Content":"Content",
+    "Add":"Add"
 }

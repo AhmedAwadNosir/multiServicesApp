@@ -454,6 +454,56 @@ class S {
       args: [],
     );
   }
+
+  /// `No Notes Found ?`
+  String get NoNotesFound {
+    return Intl.message(
+      'No Notes Found ?',
+      name: 'NoNotesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add One !`
+  String get AddOne {
+    return Intl.message('Add One !', name: 'AddOne', desc: '', args: []);
+  }
+
+  /// `Are your sure you want dellete this note ?`
+  String get Areyoursureyouwantdelletethisnote {
+    return Intl.message(
+      'Are your sure you want dellete this note ?',
+      name: 'Areyoursureyouwantdelletethisnote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dellete`
+  String get Dellete {
+    return Intl.message('Dellete', name: 'Dellete', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get Cancel {
+    return Intl.message('Cancel', name: 'Cancel', desc: '', args: []);
+  }
+
+  /// `Title`
+  String get Title {
+    return Intl.message('Title', name: 'Title', desc: '', args: []);
+  }
+
+  /// `Content`
+  String get Content {
+    return Intl.message('Content', name: 'Content', desc: '', args: []);
+  }
+
+  /// `Add`
+  String get Add {
+    return Intl.message('Add', name: 'Add', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,9 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Add": MessageLookupByLibrary.simpleMessage("إضافة"),
+    "AddOne": MessageLookupByLibrary.simpleMessage("أضف واحدة!"),
+    "Areyoursureyouwantdelletethisnote": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد حذف هذه الملاحظة؟",
+    ),
     "BestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
     "Business": MessageLookupByLibrary.simpleMessage("الأعمال"),
+    "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "Cloud": MessageLookupByLibrary.simpleMessage("سحابة"),
+    "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
+    "Dellete": MessageLookupByLibrary.simpleMessage("حذف"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("الترفيه"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("معاينة مجانية"),
@@ -36,12 +44,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
     ),
+    "NoNotesFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على ملاحظات؟",
+    ),
     "Pleasecheckyourinternetsettingsandtryagain":
         MessageLookupByLibrary.simpleMessage(
           "يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
         ),
     "Science": MessageLookupByLibrary.simpleMessage("العلوم"),
     "Sports": MessageLookupByLibrary.simpleMessage("الرياضة"),
+    "Title": MessageLookupByLibrary.simpleMessage("العنوان"),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "أهلاً بيك في تطبيقنا!",
     ),

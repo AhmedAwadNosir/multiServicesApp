@@ -2,16 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:multiservices_app/core/utils/widgets/test_language_and_thiming_widget.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/books_view_body.dart';
-import 'package:multiservices_app/features/home/news/data/repos/news_repo_impl.dart';
-import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
+import 'package:multiservices_app/features/home/notes/presentation/views/note_view.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/chat_view_body.dart';
 import 'package:multiservices_app/features/home/news/presentation/views/news_view_body.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/no_internet_conection_widget.dart';
-import 'package:multiservices_app/features/home/presentation/widgets/notes_view_body.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/user_data_app_barr.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 
@@ -31,7 +28,7 @@ class _HomeViewState extends State<HomeView> {
     BooksViewBody(),
     NewsViewBody(),
     ChatViewBody(),
-    NotesViewBody(),
+    NotesView(),
   ];
   int selectedIndex = 0;
   @override
