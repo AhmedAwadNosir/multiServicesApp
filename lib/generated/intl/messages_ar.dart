@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Science": MessageLookupByLibrary.simpleMessage("العلوم"),
     "Sports": MessageLookupByLibrary.simpleMessage("الرياضة"),
     "Title": MessageLookupByLibrary.simpleMessage("العنوان"),
+    "Typesomething": MessageLookupByLibrary.simpleMessage("اكتب شيئًا..."),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "أهلاً بيك في تطبيقنا!",
     ),

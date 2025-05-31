@@ -504,6 +504,16 @@ class S {
   String get Add {
     return Intl.message('Add', name: 'Add', desc: '', args: []);
   }
+
+  /// `Type something...`
+  String get Typesomething {
+    return Intl.message(
+      'Type something...',
+      name: 'Typesomething',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

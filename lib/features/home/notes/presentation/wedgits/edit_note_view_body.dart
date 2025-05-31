@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/features/home/notes/data/models/note_modal.dart';
 import 'package:multiservices_app/features/home/notes/presentation/wedgits/custom_search_button.dart';
 import 'package:multiservices_app/features/home/notes/presentation/wedgits/edit_note_custom_text_form_field.dart';
+import 'package:multiservices_app/generated/l10n.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.noteModal});
@@ -61,7 +62,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 // BlocProvider.of<EditConfirmationCubit>(context).noteTitle =
                 //     value;
               },
-              hint: "Title",
+              hint: S.of(context).Title,
               intialValue: widget.noteModal.title,
               fontSize: 33,
               hintFontSize: 48,
@@ -72,7 +73,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 // BlocProvider.of<EditConfirmationCubit>(context)
                 //     .noteDescription = value;
               },
-              hint: "Type something...",
+              hint: S.of(context).Typesomething,
               intialValue: widget.noteModal.description,
               fontSize: 22,
               fontWeight: FontWeight.w400,
