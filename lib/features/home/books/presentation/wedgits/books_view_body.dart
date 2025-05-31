@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart';
 import 'package:multiservices_app/features/home/books/data/models/books_filter_option.dart';
 import 'package:multiservices_app/features/home/books/functions/open_filter_dialog.dart';
-import 'package:multiservices_app/features/home/books/presentation/wedgits/best_seller_books_list_view_builder.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/best_seller_list_view_bloc_builder.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/top_books_list_view_bloc_builder.dart';
-
-import 'package:multiservices_app/features/home/books/presentation/wedgits/top_books_list_view_builder.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
 import 'package:multiservices_app/generated/l10n.dart';

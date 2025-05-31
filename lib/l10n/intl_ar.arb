@@ -40,5 +40,14 @@
       "chat": "دردشة",
       "notes": "ملاحظات",
       "FreePreview": "معاينة مجانية",
-      "YouCanAlsoLike": "قد يعجبك أيضًا"
+      "YouCanAlsoLike": "قد يعجبك أيضًا",
+      "News": "الأخبار",
+      "Cloud": "سحابة",
+      "Business": "الأعمال",
+      "Entertainment": "الترفيه",
+      "Health": "الصحة",
+      "Science": "العلوم",
+      "Sports": "الرياضة",
+      "NoInternetConnection":"لا يوجد اتصال بالإنترنت",
+      "Pleasecheckyourinternetsettingsandtryagain":"يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى."
 }

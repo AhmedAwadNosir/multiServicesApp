@@ -23,11 +23,25 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "BestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
+    "Business": MessageLookupByLibrary.simpleMessage("الأعمال"),
+    "Cloud": MessageLookupByLibrary.simpleMessage("سحابة"),
+    "Entertainment": MessageLookupByLibrary.simpleMessage("الترفيه"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("معاينة مجانية"),
+    "Health": MessageLookupByLibrary.simpleMessage("الصحة"),
     "Hi": MessageLookupByLibrary.simpleMessage("اهلا, "),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "Loginwithgoogle": MessageLookupByLibrary.simpleMessage("سجل دخول بجوجل"),
+    "News": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت",
+    ),
+    "Pleasecheckyourinternetsettingsandtryagain":
+        MessageLookupByLibrary.simpleMessage(
+          "يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
+        ),
+    "Science": MessageLookupByLibrary.simpleMessage("العلوم"),
+    "Sports": MessageLookupByLibrary.simpleMessage("الرياضة"),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "أهلاً بيك في تطبيقنا!",
     ),

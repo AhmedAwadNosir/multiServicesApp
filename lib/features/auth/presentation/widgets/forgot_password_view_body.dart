@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:multiservices_app/core/functions/tregir_cubit_check_connectavity.dart';
 import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/features/auth/presentation/widgets/custom_button.dart';
 import 'package:multiservices_app/features/auth/presentation/widgets/custom_text_form_filed.dart';
@@ -59,9 +61,15 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
                 onPressed: () async {
                   if (formkey.currentState!.validate()) {
                     formkey.currentState!.save();
-                    BlocProvider.of<SendressetpasswordemailCubit>(
-                      context,
-                    ).sendRessetPasswordRequst(emailAddress: email);
+                    bool hasInternetAcess =
+                        await InternetConnection().hasInternetAccess;
+                    if (!hasInternetAcess) {
+                      showErrorConectionDialog(context: context);
+                    } else {
+                      BlocProvider.of<SendressetpasswordemailCubit>(
+                        context,
+                      ).sendRessetPasswordRequst(emailAddress: email);
+                    }
                   } else {
                     setState(() {
                       autovalidateMode = AutovalidateMode.always;

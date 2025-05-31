@@ -23,13 +23,27 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "BestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
+    "Business": MessageLookupByLibrary.simpleMessage("Business"),
+    "Cloud": MessageLookupByLibrary.simpleMessage("Cloud"),
+    "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("Free Preview"),
+    "Health": MessageLookupByLibrary.simpleMessage("Health"),
     "Hi": MessageLookupByLibrary.simpleMessage("Hi, "),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "Loginwithgoogle": MessageLookupByLibrary.simpleMessage(
       "Login with google",
     ),
+    "News": MessageLookupByLibrary.simpleMessage("News"),
+    "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
+      "No Internet Connection",
+    ),
+    "Pleasecheckyourinternetsettingsandtryagain":
+        MessageLookupByLibrary.simpleMessage(
+          "Please check your internet settings and try again.",
+        ),
+    "Science": MessageLookupByLibrary.simpleMessage("Science"),
+    "Sports": MessageLookupByLibrary.simpleMessage("Sports"),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
       "Welcome to our app!",
     ),

@@ -1,12 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:multiservices_app/core/utils/widgets/test_language_and_thiming_widget.dart';
-import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/books_view_body.dart';
-import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
+import 'package:multiservices_app/features/home/news/data/repos/news_repo_impl.dart';
+import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/chat_view_body.dart';
-import 'package:multiservices_app/features/home/presentation/widgets/news_view_body.dart';
+import 'package:multiservices_app/features/home/news/presentation/views/news_view_body.dart';
+import 'package:multiservices_app/features/home/presentation/widgets/no_internet_conection_widget.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/notes_view_body.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/user_data_app_barr.dart';
 import 'package:multiservices_app/generated/l10n.dart';
@@ -20,6 +24,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  bool isConectedToTheInternet = false;
+  StreamSubscription? _internetConectionStreamSubscribtion;
+
   List<Widget> pages = [
     BooksViewBody(),
     NewsViewBody(),
@@ -27,6 +34,32 @@ class _HomeViewState extends State<HomeView> {
     NotesViewBody(),
   ];
   int selectedIndex = 0;
+  @override
+  void initState() {
+    _internetConectionStreamSubscribtion = InternetConnection().onStatusChange
+        .listen((event) {
+          switch (event) {
+            case InternetStatus.connected:
+              setState(() {
+                isConectedToTheInternet = true;
+              });
+              break;
+            case InternetStatus.disconnected:
+              setState(() {
+                isConectedToTheInternet = false;
+              });
+              break;
+          }
+        });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _internetConectionStreamSubscribtion?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHight = MediaQuery.of(context).size.height;
@@ -39,7 +72,15 @@ class _HomeViewState extends State<HomeView> {
             TestLnaguageAndThimingWidget(),
             // SizedBox(height: screenHight * 0.05),
             UserDataAppBarr(),
-            SizedBox(height: screenHight * 0.775, child: pages[selectedIndex]),
+            isConectedToTheInternet
+                ? SizedBox(
+                  height: screenHight * 0.775,
+                  child: pages[selectedIndex],
+                )
+                : SizedBox(
+                  height: screenHight * 0.775,
+                  child: NoInternetConectionWidget(),
+                ),
           ],
         ),
       ),

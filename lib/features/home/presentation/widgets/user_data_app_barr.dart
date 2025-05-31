@@ -31,9 +31,14 @@ class UserDataAppBarr extends StatelessWidget {
               ),
             ),
             SizedBox(width: 8),
-            Text(
-              "${S.of(context).Hi}${snapshot.data?.userName ?? ""}😎",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.67,
+              child: Text(
+                "${S.of(context).Hi}${snapshot.data?.userName ?? ""}😎",
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
             ),
             Spacer(),
             GestureDetector(

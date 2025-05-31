@@ -7,6 +7,8 @@ import 'package:multiservices_app/core/utils/app_routes.dart';
 import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
+import 'package:multiservices_app/features/home/news/data/repos/news_repo_impl.dart';
+import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/views/splash_view.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
@@ -50,6 +52,7 @@ class MultiServicesApp extends StatelessWidget {
         BlocProvider(
           create: (context) => GetBestSellerBooksCubit(BookRepoImpl()),
         ),
+        BlocProvider(create: (context) => GetNewsCubit(NewsRepoImpl())),
       ],
 
       child: MaterialApp(

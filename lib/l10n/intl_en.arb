@@ -40,5 +40,14 @@
     "chat":"chat",
     "notes":"notes",
     "FreePreview":"Free Preview",
-    "YouCanAlsoLike":"You Can Also Like"
+    "YouCanAlsoLike":"You Can Also Like",
+    "News":"News",
+    "Cloud":"Cloud",
+    "Business":"Business",
+    "Entertainment":"Entertainment",
+    "Health":"Health",
+    "Science":"Science",
+    "Sports":"Sports",
+    "NoInternetConnection":"No Internet Connection",
+    "Pleasecheckyourinternetsettingsandtryagain":"Please check your internet settings and try again."
 }

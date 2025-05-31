@@ -1,8 +1,11 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:multiservices_app/core/functions/show_awesome_dialog.dart';
+import 'package:multiservices_app/core/functions/tregir_cubit_check_connectavity.dart';
 import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/auth/functions/pick_image.dart';
 import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart';
@@ -98,26 +101,32 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                         if (formKey.currentState!.validate()) {
                           formKey.currentState!.save();
                           if (profileImage != null) {
-                            String? imgdonloadUrl;
-                            try {
-                              imgdonloadUrl = await uploadProfilegetUrl(
-                                profileImage: profileImage!,
-                              );
-                            } catch (e) {
-                              showErrorDialog(
-                                context: context,
-                                errorMessage: e.toString(),
-                              );
-                            }
-                            if (imgdonloadUrl != null) {
-                              BlocProvider.of<SignupCubit>(context).signUp(
-                                emailAddress: email,
-                                password: Password,
-                                userModal: UserModal(
-                                  userName: userName,
-                                  profilImageLink: imgdonloadUrl,
-                                ),
-                              );
+                            var hasInternetAcess =
+                                await InternetConnection().hasInternetAccess;
+                            if (!hasInternetAcess) {
+                              showErrorConectionDialog(context: context);
+                            } else {
+                              String? imgdonloadUrl;
+                              try {
+                                imgdonloadUrl = await uploadProfilegetUrl(
+                                  profileImage: profileImage!,
+                                );
+                              } catch (e) {
+                                showErrorDialog(
+                                  context: context,
+                                  errorMessage: e.toString(),
+                                );
+                              }
+                              if (imgdonloadUrl != null) {
+                                BlocProvider.of<SignupCubit>(context).signUp(
+                                  emailAddress: email,
+                                  password: Password,
+                                  userModal: UserModal(
+                                    userName: userName,
+                                    profilImageLink: imgdonloadUrl,
+                                  ),
+                                );
+                              }
                             }
                           } else {
                             showAwesomeDialog(

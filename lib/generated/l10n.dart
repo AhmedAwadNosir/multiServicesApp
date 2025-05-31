@@ -394,6 +394,66 @@ class S {
       args: [],
     );
   }
+
+  /// `News`
+  String get News {
+    return Intl.message('News', name: 'News', desc: '', args: []);
+  }
+
+  /// `Cloud`
+  String get Cloud {
+    return Intl.message('Cloud', name: 'Cloud', desc: '', args: []);
+  }
+
+  /// `Business`
+  String get Business {
+    return Intl.message('Business', name: 'Business', desc: '', args: []);
+  }
+
+  /// `Entertainment`
+  String get Entertainment {
+    return Intl.message(
+      'Entertainment',
+      name: 'Entertainment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health`
+  String get Health {
+    return Intl.message('Health', name: 'Health', desc: '', args: []);
+  }
+
+  /// `Science`
+  String get Science {
+    return Intl.message('Science', name: 'Science', desc: '', args: []);
+  }
+
+  /// `Sports`
+  String get Sports {
+    return Intl.message('Sports', name: 'Sports', desc: '', args: []);
+  }
+
+  /// `No Internet Connection`
+  String get NoInternetConnection {
+    return Intl.message(
+      'No Internet Connection',
+      name: 'NoInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet settings and try again.`
+  String get Pleasecheckyourinternetsettingsandtryagain {
+    return Intl.message(
+      'Please check your internet settings and try again.',
+      name: 'Pleasecheckyourinternetsettingsandtryagain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

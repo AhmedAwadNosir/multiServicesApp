@@ -9,9 +9,6 @@ import 'package:multiservices_app/features/auth/states_manager/sende_resset_pass
 import 'package:multiservices_app/features/auth/states_manager/sign_in/signin_cubit.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_in_google/signingoogle_cubit.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_up/signup_cubit.dart';
-import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
-import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
-import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
 import 'package:multiservices_app/features/home/presentation/views/home_view.dart';
 
 import 'package:multiservices_app/features/onBoarding/presentation/views/onbaording_view.dart';

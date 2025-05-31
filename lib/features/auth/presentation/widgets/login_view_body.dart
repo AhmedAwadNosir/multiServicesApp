@@ -1,6 +1,9 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:multiservices_app/core/functions/tregir_cubit_check_connectavity.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
 import 'package:multiservices_app/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:multiservices_app/features/auth/presentation/views/sign_up_view.dart';
@@ -94,10 +97,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
-                        await FirebaseAuth.instance.signOut();
-                        BlocProvider.of<SigninCubit>(
-                          context,
-                        ).signIn(emailAddress: email, password: password);
+                        var hasInternetAcess =
+                            await InternetConnection().hasInternetAccess;
+                        if (!hasInternetAcess) {
+                          showErrorConectionDialog(context: context);
+                        } else {
+                          await FirebaseAuth.instance.signOut();
+                          BlocProvider.of<SigninCubit>(
+                            context,
+                          ).signIn(emailAddress: email, password: password);
+                        }
                       } else {
                         autovalidateMode = AutovalidateMode.always;
                         setState(() {});
@@ -114,9 +123,15 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   height: 50,
                   child: CustomSocialAuthButton(
                     onPressed: () async {
-                      BlocProvider.of<SigningoogleCubit>(
-                        context,
-                      ).signInGoogle();
+                      bool hasInternetAccess =
+                          await InternetConnection().hasInternetAccess;
+                      if (!hasInternetAccess) {
+                        showErrorConectionDialog(context: context);
+                      } else {
+                        BlocProvider.of<SigningoogleCubit>(
+                          context,
+                        ).signInGoogle();
+                      }
                     },
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     buttonName: S.of(context).Loginwithgoogle,
