@@ -514,6 +514,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Save changes ?`
+  String get Savechanges {
+    return Intl.message(
+      'Save changes ?',
+      name: 'Savechanges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discard`
+  String get Discard {
+    return Intl.message('Discard', name: 'Discard', desc: '', args: []);
+  }
+
+  /// ` Save  `
+  String get Save {
+    return Intl.message(' Save  ', name: 'Save', desc: '', args: []);
+  }
+
+  /// `Are your sure you want discard your changes ?`
+  String get Areyoursureyouwantdiscardyourchanges {
+    return Intl.message(
+      'Are your sure you want discard your changes ?',
+      name: 'Areyoursureyouwantdiscardyourchanges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` keep  `
+  String get keep {
+    return Intl.message(' keep  ', name: 'keep', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

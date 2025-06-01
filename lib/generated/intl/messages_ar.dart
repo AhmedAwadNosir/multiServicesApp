@@ -27,12 +27,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "Areyoursureyouwantdelletethisnote": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد أنك تريد حذف هذه الملاحظة؟",
     ),
+    "Areyoursureyouwantdiscardyourchanges":
+        MessageLookupByLibrary.simpleMessage(
+          "هل أنت متأكد أنك تريد تجاهل التغييرات؟",
+        ),
     "BestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
     "Business": MessageLookupByLibrary.simpleMessage("الأعمال"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "Cloud": MessageLookupByLibrary.simpleMessage("سحابة"),
     "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
     "Dellete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "Discard": MessageLookupByLibrary.simpleMessage("تجاهل"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("الترفيه"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("معاينة مجانية"),
@@ -51,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
         ),
+    "Save": MessageLookupByLibrary.simpleMessage("  حفظ "),
+    "Savechanges": MessageLookupByLibrary.simpleMessage(
+      "هل تريد حفظ التغييرات ؟",
+    ),
     "Science": MessageLookupByLibrary.simpleMessage("العلوم"),
     "Sports": MessageLookupByLibrary.simpleMessage("الرياضة"),
     "Title": MessageLookupByLibrary.simpleMessage("العنوان"),
@@ -86,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ifyouhaveaccount": MessageLookupByLibrary.simpleMessage(
       "إذا كان لديك حساب،",
     ),
+    "keep": MessageLookupByLibrary.simpleMessage("  احتفاظ "),
     "lastname": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
     "news": MessageLookupByLibrary.simpleMessage("أخبار"),
     "notes": MessageLookupByLibrary.simpleMessage("ملاحظات"),

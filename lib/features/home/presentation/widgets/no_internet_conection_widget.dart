@@ -14,9 +14,13 @@ class NoInternetConectionWidget extends StatelessWidget {
           S.of(context).NoInternetConnection,
           style: TextStyle(fontSize: 18),
         ),
-        Text(
-          S.of(context).Pleasecheckyourinternetsettingsandtryagain,
-          style: TextStyle(fontSize: 16),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.7,
+          child: Text(
+            S.of(context).Pleasecheckyourinternetsettingsandtryagain,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
       ],
     );

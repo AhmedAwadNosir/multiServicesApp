@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/features/home/notes/data/models/note_modal.dart';
 import 'package:multiservices_app/features/home/notes/presentation/wedgits/custom_search_button.dart';
 import 'package:multiservices_app/features/home/notes/presentation/wedgits/edit_note_custom_text_form_field.dart';
+import 'package:multiservices_app/features/home/notes/states_manager/edit_notes_confirmation/edit_notes_confirmation_cubit.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 
 class EditNoteViewBody extends StatefulWidget {
@@ -16,10 +17,10 @@ class EditNoteViewBody extends StatefulWidget {
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   @override
   void initState() {
-    // BlocProvider.of<EditConfirmationCubit>(context).noteTitle =
-    //     widget.noteModal.title;
-    // BlocProvider.of<EditConfirmationCubit>(context).noteDescription =
-    //     widget.noteModal.description;
+    BlocProvider.of<EditNotesConfirmationCubit>(context).noteTitle =
+        widget.noteModal.title;
+    BlocProvider.of<EditNotesConfirmationCubit>(context).noteDescription =
+        widget.noteModal.description;
 
     super.initState();
   }
@@ -36,20 +37,24 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               children: [
                 CustomIconButton(
                   ontap: () {
-                    // BlocProvider.of<EditConfirmationCubit>(context)
-                    //     .editNoteConfrmation(
-                    //         note: widget.noteModal,
-                    //         isboobConfarmation: true,
-                    //         context: context);
-                    Navigator.pop(context);
+                    BlocProvider.of<EditNotesConfirmationCubit>(
+                      context,
+                    ).editNoteConfrmation(
+                      note: widget.noteModal,
+                      isboobConfarmation: true,
+                      context: context,
+                    );
                   },
                   icon: Icons.chevron_left_outlined,
                 ),
                 CustomIconButton(
                   ontap: () {
-                    // BlocProvider.of<EditConfirmationCubit>(context)
-                    //     .editNoteConfrmation(
-                    //         note: widget.noteModal, context: context);
+                    BlocProvider.of<EditNotesConfirmationCubit>(
+                      context,
+                    ).editNoteConfrmation(
+                      note: widget.noteModal,
+                      context: context,
+                    );
                   },
                   icon: Icons.save,
                 ),
@@ -59,8 +64,8 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             //title text field
             EditNoteCustomTextFormFilled(
               onChanged: (value) {
-                // BlocProvider.of<EditConfirmationCubit>(context).noteTitle =
-                //     value;
+                BlocProvider.of<EditNotesConfirmationCubit>(context).noteTitle =
+                    value;
               },
               hint: S.of(context).Title,
               intialValue: widget.noteModal.title,
@@ -70,8 +75,8 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             const SizedBox(height: 12),
             EditNoteCustomTextFormFilled(
               onChanged: (value) {
-                // BlocProvider.of<EditConfirmationCubit>(context)
-                //     .noteDescription = value;
+                BlocProvider.of<EditNotesConfirmationCubit>(context)
+                    .noteDescription = value;
               },
               hint: S.of(context).Typesomething,
               intialValue: widget.noteModal.description,

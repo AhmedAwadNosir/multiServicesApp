@@ -5,7 +5,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:multiservices_app/core/utils/widgets/test_language_and_thiming_widget.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/books_view_body.dart';
-import 'package:multiservices_app/features/home/notes/presentation/views/note_view.dart';
+import 'package:multiservices_app/features/home/notes/presentation/views/notes_view.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/chat_view_body.dart';
 import 'package:multiservices_app/features/home/news/presentation/views/news_view_body.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/no_internet_conection_widget.dart';
@@ -21,7 +21,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  bool isConectedToTheInternet = false;
+  bool isConectedToTheInternet = true;
   StreamSubscription? _internetConectionStreamSubscribtion;
 
   List<Widget> pages = [
@@ -69,14 +69,19 @@ class _HomeViewState extends State<HomeView> {
             TestLnaguageAndThimingWidget(),
             // SizedBox(height: screenHight * 0.05),
             UserDataAppBarr(),
-            isConectedToTheInternet
-                ? SizedBox(
-                  height: screenHight * 0.775,
-                  child: pages[selectedIndex],
-                )
+            selectedIndex != 3
+                ? isConectedToTheInternet
+                    ? SizedBox(
+                      height: screenHight * 0.775,
+                      child: pages[selectedIndex],
+                    )
+                    : SizedBox(
+                      height: screenHight * 0.775,
+                      child: NoInternetConectionWidget(),
+                    )
                 : SizedBox(
                   height: screenHight * 0.775,
-                  child: NoInternetConectionWidget(),
+                  child: pages[selectedIndex],
                 ),
           ],
         ),

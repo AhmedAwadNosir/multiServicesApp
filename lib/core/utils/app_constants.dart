@@ -6,4 +6,5 @@ abstract class AppConstants {
   static const userColection = "user";
   static const userNameKey = "userName";
   static const profileImageKey = "profileImage";
+  static const kNotesBox = "NotesBox";
 }

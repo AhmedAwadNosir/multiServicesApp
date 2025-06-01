@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   static List<Color> kcolors = [
-    Colors.amber,
-    Colors.blue,
-    Colors.cyan,
     Colors.blueGrey,
     Colors.deepOrange,
     Colors.deepPurple,

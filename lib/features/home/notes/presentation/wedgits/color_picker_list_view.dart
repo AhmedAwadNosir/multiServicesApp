@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/core/utils/widgets/app_colors.dart';
 import 'package:multiservices_app/features/home/notes/presentation/wedgits/color_picker.dart';
+import 'package:multiservices_app/features/home/notes/states_manager/add_note/add_note_cubit.dart';
 
 class ColorPickerListView extends StatefulWidget {
   ColorPickerListView({super.key});
@@ -23,8 +24,8 @@ class _ColorPickerListViewState extends State<ColorPickerListView> {
           return GestureDetector(
             onTap: () {
               currentIndex = index;
-              // BlocProvider.of<AddNotesCubit>(context).noteColor =
-              //     AppColors.kcolors[index];
+              BlocProvider.of<AddNoteCubit>(context).noteColor =
+                  AppColors.kcolors[index].toARGB32();
               setState(() {});
             },
             child: ColorPiker(

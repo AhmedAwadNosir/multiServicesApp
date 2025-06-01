@@ -27,12 +27,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "Areyoursureyouwantdelletethisnote": MessageLookupByLibrary.simpleMessage(
       "Are your sure you want dellete this note ?",
     ),
+    "Areyoursureyouwantdiscardyourchanges":
+        MessageLookupByLibrary.simpleMessage(
+          "Are your sure you want discard your changes ?",
+        ),
     "BestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
     "Business": MessageLookupByLibrary.simpleMessage("Business"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "Cloud": MessageLookupByLibrary.simpleMessage("Cloud"),
     "Content": MessageLookupByLibrary.simpleMessage("Content"),
     "Dellete": MessageLookupByLibrary.simpleMessage("Dellete"),
+    "Discard": MessageLookupByLibrary.simpleMessage("Discard"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("Free Preview"),
@@ -51,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Please check your internet settings and try again.",
         ),
+    "Save": MessageLookupByLibrary.simpleMessage(" Save  "),
+    "Savechanges": MessageLookupByLibrary.simpleMessage("Save changes ?"),
     "Science": MessageLookupByLibrary.simpleMessage("Science"),
     "Sports": MessageLookupByLibrary.simpleMessage("Sports"),
     "Title": MessageLookupByLibrary.simpleMessage("Title"),
@@ -90,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ifyouhaveaccount": MessageLookupByLibrary.simpleMessage(
       "if you have account,",
     ),
+    "keep": MessageLookupByLibrary.simpleMessage(" keep  "),
     "lastname": MessageLookupByLibrary.simpleMessage("lastname"),
     "news": MessageLookupByLibrary.simpleMessage("news"),
     "notes": MessageLookupByLibrary.simpleMessage("notes"),

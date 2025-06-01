@@ -58,5 +58,10 @@
     "Title":"Title",
     "Content":"Content",
     "Add":"Add",
-    "Typesomething":"Type something..."
+    "Typesomething":"Type something...",
+    "Savechanges":"Save changes ?",
+    "Discard":"Discard",
+    "Save":" Save  ",
+    "Areyoursureyouwantdiscardyourchanges":"Are your sure you want discard your changes ?",
+     "keep": " keep  "
 }

@@ -2,13 +2,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:multiservices_app/core/theme/theme_provider.dart';
+import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:multiservices_app/core/utils/app_routes.dart';
 import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
 import 'package:multiservices_app/features/home/news/data/repos/news_repo_impl.dart';
 import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
+import 'package:multiservices_app/features/home/notes/data/models/note_modal.dart';
+import 'package:multiservices_app/features/home/notes/states_manager/edit_notes_confirmation/edit_notes_confirmation_cubit.dart';
+import 'package:multiservices_app/features/home/notes/states_manager/get_notes/get_notes_cubit.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/views/splash_view.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
@@ -23,6 +28,9 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final isDarkMode = prefs.getBool('isDarkMode') ?? false;
   final lang = prefs.getString('lang') ?? 'en';
+  await Hive.initFlutter();
+  Hive.registerAdapter(NoteModalAdapter());
+  Hive.openBox<NoteModal>(AppConstants.kNotesBox);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Supabase.initialize(
     url: "https://sdgunsqqtcskclxgtydj.supabase.co",
@@ -53,6 +61,8 @@ class MultiServicesApp extends StatelessWidget {
           create: (context) => GetBestSellerBooksCubit(BookRepoImpl()),
         ),
         BlocProvider(create: (context) => GetNewsCubit(NewsRepoImpl())),
+        BlocProvider(create: (context) => GetNotesCubit()),
+        BlocProvider(create: (context) => EditNotesConfirmationCubit()),
       ],
 
       child: MaterialApp(

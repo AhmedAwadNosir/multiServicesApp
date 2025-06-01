@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/features/home/notes/data/models/note_modal.dart';
 import 'package:multiservices_app/features/home/notes/functions/show_confirmation_dialog.dart';
 import 'package:multiservices_app/features/home/notes/presentation/views/edit_note_view.dart';
+import 'package:multiservices_app/features/home/notes/states_manager/get_notes/get_notes_cubit.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 
 class CustomNoteCard extends StatelessWidget {
@@ -63,10 +64,9 @@ class CustomNoteCard extends StatelessWidget {
                           cancelButtonName: S.of(context).Cancel,
                           confirmButtonName: S.of(context).Dellete,
                           confirmOnPressed: () {
-                            // noteModal.delete();
-                            // BlocProvider.of<GetNotesCubit>(context)
-                            //     .getNotes();
-                            // Navigator.pop(context);
+                            noteModal.delete();
+                            BlocProvider.of<GetNotesCubit>(context).getNotes();
+                            Navigator.pop(context);
                           },
                         );
                       },

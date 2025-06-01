@@ -58,5 +58,11 @@
       "Title": "العنوان",
       "Content": "المحتوى",
       "Add": "إضافة",
-      "Typesomething": "اكتب شيئًا..."
+      "Typesomething": "اكتب شيئًا...",
+      "Savechanges": "هل تريد حفظ التغييرات ؟",
+      "Discard": "تجاهل",
+      "Save": "  حفظ ",
+      "Areyoursureyouwantdiscardyourchanges": "هل أنت متأكد أنك تريد تجاهل التغييرات؟",
+      "keep": "  احتفاظ "
+
 }
