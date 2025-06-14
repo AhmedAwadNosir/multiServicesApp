@@ -63,6 +63,16 @@
       "Discard": "تجاهل",
       "Save": "  حفظ ",
       "Areyoursureyouwantdiscardyourchanges": "هل أنت متأكد أنك تريد تجاهل التغييرات؟",
-      "keep": "  احتفاظ "
+      "keep": "  احتفاظ ",
+      "Messages": "الرسائل",
+      "NoMessagesFound": "لم يتم العثور على رسائل؟",
+      "StartNewChat": "ابدأ محادثة جديدة!",
+      "NoUsersYet": "لا يوجد مستخدمون بعد!",
+      "FreindRequsts": "طلبات الصداقة",
+      "AddFreinds": "أضف أصدقاء",
+      "AddFriend": "أضف صديقًا",
+      "Confirm": "تأكيد",
+      "NoFriendsYetgoMakeSomeFreinds": "لا أصدقاء بعد! اذهب وكون بعض الأصدقاء؟",
+      "SearchbyName": "ابحث بالاسم..."
 
 }

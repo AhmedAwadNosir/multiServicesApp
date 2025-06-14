@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Add": MessageLookupByLibrary.simpleMessage("إضافة"),
+    "AddFreinds": MessageLookupByLibrary.simpleMessage("أضف أصدقاء"),
+    "AddFriend": MessageLookupByLibrary.simpleMessage("أضف صديقًا"),
     "AddOne": MessageLookupByLibrary.simpleMessage("أضف واحدة!"),
     "Areyoursureyouwantdelletethisnote": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد أنك تريد حذف هذه الملاحظة؟",
@@ -35,23 +37,33 @@ class MessageLookup extends MessageLookupByLibrary {
     "Business": MessageLookupByLibrary.simpleMessage("الأعمال"),
     "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "Cloud": MessageLookupByLibrary.simpleMessage("سحابة"),
+    "Confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
     "Dellete": MessageLookupByLibrary.simpleMessage("حذف"),
     "Discard": MessageLookupByLibrary.simpleMessage("تجاهل"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("الترفيه"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("معاينة مجانية"),
+    "FreindRequsts": MessageLookupByLibrary.simpleMessage("طلبات الصداقة"),
     "Health": MessageLookupByLibrary.simpleMessage("الصحة"),
     "Hi": MessageLookupByLibrary.simpleMessage("اهلا, "),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "Loginwithgoogle": MessageLookupByLibrary.simpleMessage("سجل دخول بجوجل"),
+    "Messages": MessageLookupByLibrary.simpleMessage("الرسائل"),
     "News": MessageLookupByLibrary.simpleMessage("الأخبار"),
+    "NoFriendsYetgoMakeSomeFreinds": MessageLookupByLibrary.simpleMessage(
+      "لا أصدقاء بعد! اذهب وكون بعض الأصدقاء؟",
+    ),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
+    ),
+    "NoMessagesFound": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على رسائل؟",
     ),
     "NoNotesFound": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على ملاحظات؟",
     ),
+    "NoUsersYet": MessageLookupByLibrary.simpleMessage("لا يوجد مستخدمون بعد!"),
     "Pleasecheckyourinternetsettingsandtryagain":
         MessageLookupByLibrary.simpleMessage(
           "يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
@@ -61,7 +73,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل تريد حفظ التغييرات ؟",
     ),
     "Science": MessageLookupByLibrary.simpleMessage("العلوم"),
+    "SearchbyName": MessageLookupByLibrary.simpleMessage("ابحث بالاسم..."),
     "Sports": MessageLookupByLibrary.simpleMessage("الرياضة"),
+    "StartNewChat": MessageLookupByLibrary.simpleMessage("ابدأ محادثة جديدة!"),
     "Title": MessageLookupByLibrary.simpleMessage("العنوان"),
     "Typesomething": MessageLookupByLibrary.simpleMessage("اكتب شيئًا..."),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(

@@ -14,4 +14,9 @@ abstract class AppImages {
   static const sports = "assets/images/Sports.jpeg";
   static const noNotesFound = "assets/images/noFilesFound.png";
   static const addNote = "assets/images/createnote.png";
+  static const profilePhoto = "assets/images/profilePhoto.jpeg";
+  static const noMessagesFound = "assets/images/noMessages.png";
+  static const noUsers = "assets/images/NoUsers.png";
+  static const chatBackground = "assets/images/chat_background.jpeg";
+  static const chatBackgroundLight = "assets/images/chat_background_light.jpg";
 }

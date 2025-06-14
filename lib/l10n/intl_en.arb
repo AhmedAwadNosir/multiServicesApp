@@ -63,5 +63,16 @@
     "Discard":"Discard",
     "Save":" Save  ",
     "Areyoursureyouwantdiscardyourchanges":"Are your sure you want discard your changes ?",
-     "keep": " keep  "
+     "keep": " keep  ",
+    "Messages": "Messages",
+    "NoMessagesFound":"No Messages Found?",
+    "StartNewChat":"Start New Chat!",
+    "NoUsersYet":"No Users Yet!",
+    "FreindRequsts":"Freind Requsts",
+    "AddFreinds":"Add Freinds",
+    "AddFriend":"Add Friend",
+    "Confirm": "Confirm",
+    "NoFriendsYetgoMakeSomeFreinds":"NO Friends Yet! go Make Some Freinds?",
+    "SearchbyName": "Search by Name..."
+
 }

@@ -6,7 +6,7 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 import 'package:multiservices_app/core/utils/widgets/test_language_and_thiming_widget.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/books_view_body.dart';
 import 'package:multiservices_app/features/home/notes/presentation/views/notes_view.dart';
-import 'package:multiservices_app/features/home/presentation/widgets/chat_view_body.dart';
+import 'package:multiservices_app/features/home/chat/presentation/views/chat_tap.dart';
 import 'package:multiservices_app/features/home/news/presentation/views/news_view_body.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/no_internet_conection_widget.dart';
 import 'package:multiservices_app/features/home/presentation/widgets/user_data_app_barr.dart';
@@ -27,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
   List<Widget> pages = [
     BooksViewBody(),
     NewsViewBody(),
-    ChatViewBody(),
+    ChatTap(),
     NotesView(),
   ];
   int selectedIndex = 0;

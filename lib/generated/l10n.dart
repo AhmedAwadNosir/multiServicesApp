@@ -549,6 +549,86 @@ class S {
   String get keep {
     return Intl.message(' keep  ', name: 'keep', desc: '', args: []);
   }
+
+  /// `Messages`
+  String get Messages {
+    return Intl.message('Messages', name: 'Messages', desc: '', args: []);
+  }
+
+  /// `No Messages Found?`
+  String get NoMessagesFound {
+    return Intl.message(
+      'No Messages Found?',
+      name: 'NoMessagesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start New Chat!`
+  String get StartNewChat {
+    return Intl.message(
+      'Start New Chat!',
+      name: 'StartNewChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Users Yet!`
+  String get NoUsersYet {
+    return Intl.message(
+      'No Users Yet!',
+      name: 'NoUsersYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Freind Requsts`
+  String get FreindRequsts {
+    return Intl.message(
+      'Freind Requsts',
+      name: 'FreindRequsts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Freinds`
+  String get AddFreinds {
+    return Intl.message('Add Freinds', name: 'AddFreinds', desc: '', args: []);
+  }
+
+  /// `Add Friend`
+  String get AddFriend {
+    return Intl.message('Add Friend', name: 'AddFriend', desc: '', args: []);
+  }
+
+  /// `Confirm`
+  String get Confirm {
+    return Intl.message('Confirm', name: 'Confirm', desc: '', args: []);
+  }
+
+  /// `NO Friends Yet! go Make Some Freinds?`
+  String get NoFriendsYetgoMakeSomeFreinds {
+    return Intl.message(
+      'NO Friends Yet! go Make Some Freinds?',
+      name: 'NoFriendsYetgoMakeSomeFreinds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search by Name...`
+  String get SearchbyName {
+    return Intl.message(
+      'Search by Name...',
+      name: 'SearchbyName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

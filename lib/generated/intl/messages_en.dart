@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Add": MessageLookupByLibrary.simpleMessage("Add"),
+    "AddFreinds": MessageLookupByLibrary.simpleMessage("Add Freinds"),
+    "AddFriend": MessageLookupByLibrary.simpleMessage("Add Friend"),
     "AddOne": MessageLookupByLibrary.simpleMessage("Add One !"),
     "Areyoursureyouwantdelletethisnote": MessageLookupByLibrary.simpleMessage(
       "Are your sure you want dellete this note ?",
@@ -35,23 +37,33 @@ class MessageLookup extends MessageLookupByLibrary {
     "Business": MessageLookupByLibrary.simpleMessage("Business"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "Cloud": MessageLookupByLibrary.simpleMessage("Cloud"),
+    "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "Content": MessageLookupByLibrary.simpleMessage("Content"),
     "Dellete": MessageLookupByLibrary.simpleMessage("Dellete"),
     "Discard": MessageLookupByLibrary.simpleMessage("Discard"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("Free Preview"),
+    "FreindRequsts": MessageLookupByLibrary.simpleMessage("Freind Requsts"),
     "Health": MessageLookupByLibrary.simpleMessage("Health"),
     "Hi": MessageLookupByLibrary.simpleMessage("Hi, "),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
     "Loginwithgoogle": MessageLookupByLibrary.simpleMessage(
       "Login with google",
     ),
+    "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
     "News": MessageLookupByLibrary.simpleMessage("News"),
+    "NoFriendsYetgoMakeSomeFreinds": MessageLookupByLibrary.simpleMessage(
+      "NO Friends Yet! go Make Some Freinds?",
+    ),
     "NoInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No Internet Connection",
     ),
+    "NoMessagesFound": MessageLookupByLibrary.simpleMessage(
+      "No Messages Found?",
+    ),
     "NoNotesFound": MessageLookupByLibrary.simpleMessage("No Notes Found ?"),
+    "NoUsersYet": MessageLookupByLibrary.simpleMessage("No Users Yet!"),
     "Pleasecheckyourinternetsettingsandtryagain":
         MessageLookupByLibrary.simpleMessage(
           "Please check your internet settings and try again.",
@@ -59,7 +71,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Save": MessageLookupByLibrary.simpleMessage(" Save  "),
     "Savechanges": MessageLookupByLibrary.simpleMessage("Save changes ?"),
     "Science": MessageLookupByLibrary.simpleMessage("Science"),
+    "SearchbyName": MessageLookupByLibrary.simpleMessage("Search by Name..."),
     "Sports": MessageLookupByLibrary.simpleMessage("Sports"),
+    "StartNewChat": MessageLookupByLibrary.simpleMessage("Start New Chat!"),
     "Title": MessageLookupByLibrary.simpleMessage("Title"),
     "Typesomething": MessageLookupByLibrary.simpleMessage("Type something..."),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(
