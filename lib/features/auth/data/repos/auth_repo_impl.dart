@@ -14,16 +14,21 @@ class AuthRepoImpl implements AuthRepo {
 
   AuthRepoImpl({required this.firebaseServieces});
   @override
-  Future<Either<FireFailure, dynamic>> signInWithEmailAndPassword({
+  Future<Either<FireFailure, UserModal>> signInWithEmailAndPassword({
     required String emailAddress,
     required String password,
   }) async {
     try {
-      var data = await firebaseServieces.signInUserWithEmailPassword(
-        emailAddress: emailAddress,
-        password: password,
+      UserCredential userCredential = await firebaseServieces
+          .signInUserWithEmailPassword(
+            emailAddress: emailAddress,
+            password: password,
+          );
+      DocumentSnapshot snapshot = await firebaseServieces.getDoc(
+        colecName: AppConstants.userColection,
+        docId: userCredential.user!.uid,
       );
-      return right(data);
+      return right(UserModal.fromJson(snapshot.data()));
     } catch (e) {
       if (e is FirebaseAuthException) {
         return left(FirebaseFailure.fromFirebaseAuthError(e));

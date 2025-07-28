@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomProfilePhotoCircleAvatar extends StatelessWidget {
@@ -14,7 +15,7 @@ class CustomProfilePhotoCircleAvatar extends StatelessWidget {
       radius: radius != null ? radius! + 3 : 33,
       child: CircleAvatar(
         radius: radius ?? 30,
-        backgroundImage: AssetImage(profileImage),
+        backgroundImage: CachedNetworkImageProvider(profileImage),
       ),
     );
   }

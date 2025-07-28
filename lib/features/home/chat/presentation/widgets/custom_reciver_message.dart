@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:multiservices_app/features/home/chat/data/models/message_modal.dart';
+import 'package:intl/intl.dart';
 
 class CustomResiverMessage extends StatelessWidget {
   const CustomResiverMessage({super.key, required this.message});
-  final String message;
+  final MessageModal message;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,9 +26,30 @@ class CustomResiverMessage extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(14),
           ),
-          child: Text(
-            message,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                DateFormat('dd/MM/yyyy').format(message.messageTime.toDate()),
+                style: TextStyle(fontSize: 10),
+              ),
+              SizedBox(width: 50),
+              Text(
+                message.messageContent,
+                softWrap: true,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(width: 60),
+              Text(
+                DateFormat(
+                  'hh:mm a',
+                ).format(message.messageTime.toDate()).toLowerCase(),
+                style: TextStyle(fontSize: 10),
+              ),
+            ],
           ),
         ),
       ],

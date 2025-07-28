@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/features/home/chat/data/models/user_modal.dart';
+import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/chat_view_body.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_profile_photo_circle_avatar.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({super.key, required this.userModal});
-  final FriendUserModal userModal;
+  final UserModal userModal;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class ChatView extends StatelessWidget {
             ),
 
             CustomProfilePhotoCircleAvatar(
-              profileImage: userModal.profileImage,
+              profileImage: userModal.profilImageLink,
               radius: 20,
             ),
             SizedBox(width: 6),
@@ -37,7 +37,7 @@ class ChatView extends StatelessWidget {
           ],
         ),
       ),
-      body: ChatViewBody(),
+      body: ChatViewBody(reciverModal: userModal),
     );
   }
 }

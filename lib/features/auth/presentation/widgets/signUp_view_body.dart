@@ -51,7 +51,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 Center(
                   child: CustomIMagePickerContainer(
                     onTap: () async {
-                      profileImage = await pickImage();
+                      profileImage = await pickGallaryImage();
                       setState(() {});
                     },
                     image: profileImage,

@@ -5,11 +5,13 @@ class CreateMessageTextFormField extends StatelessWidget {
     super.key,
     this.onSubmitted,
     required this.textEditingController,
+    required this.suffixIcon,
     this.onChanged,
   });
   final void Function(String?)? onSubmitted;
   final void Function(String?)? onChanged;
   final TextEditingController textEditingController;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,9 +22,11 @@ class CreateMessageTextFormField extends StatelessWidget {
       ),
       child: TextField(
         controller: textEditingController,
+
         decoration: InputDecoration(
           errorMaxLines: 2,
           hintText: "Tape your message",
+          suffixIcon: suffixIcon,
           hintStyle: TextStyle(
             color: Theme.of(
               context,

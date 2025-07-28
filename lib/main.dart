@@ -1,14 +1,19 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/core/theme/theme_provider.dart';
 import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:multiservices_app/core/utils/app_routes.dart';
 import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
+import 'package:multiservices_app/features/home/chat/data/repos/chat_repo_impl.dart';
+import 'package:multiservices_app/features/home/chat/states_manager/get_all_contacts/get_all_contacts_cubit.dart';
+import 'package:multiservices_app/features/home/chat/states_manager/send_message/send_message_cubit.dart';
 import 'package:multiservices_app/features/home/news/data/repos/news_repo_impl.dart';
 import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
 import 'package:multiservices_app/features/home/notes/data/models/note_modal.dart';
@@ -63,6 +68,24 @@ class MultiServicesApp extends StatelessWidget {
         BlocProvider(create: (context) => GetNewsCubit(NewsRepoImpl())),
         BlocProvider(create: (context) => GetNotesCubit()),
         BlocProvider(create: (context) => EditNotesConfirmationCubit()),
+        BlocProvider(
+          create:
+              (context) => SendMessageCubit(
+                chatRepoImpl: ChatRepoImpl(
+                  firebaseServieces: FirebaseServieces(),
+                  auth: FirebaseAuth.instance,
+                ),
+              ),
+        ),
+        BlocProvider(
+          create:
+              (context) => GetAllContactsCubit(
+                ChatRepoImpl(
+                  firebaseServieces: FirebaseServieces(),
+                  auth: FirebaseAuth.instance,
+                ),
+              ),
+        ),
       ],
 
       child: MaterialApp(

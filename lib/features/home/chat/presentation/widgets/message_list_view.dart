@@ -34,15 +34,13 @@ class _MessagesListViewState extends State<MessagesListView> {
                 ? Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: CustomSenderMessage(
-                    message: widget.messages[index].messageContent,
+                    message: widget.messages[index],
                     userAvatar: AppImages.profilePhoto,
                   ),
                 )
                 : Padding(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: CustomResiverMessage(
-                    message: widget.messages[index].messageContent,
-                  ),
+                  child: CustomResiverMessage(message: widget.messages[index]),
                 );
           },
         ),

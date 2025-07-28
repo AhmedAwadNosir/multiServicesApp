@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/core/utils/app_images.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/cusotm_search_bar.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/freinds_list_view.dart';
-import 'package:multiservices_app/features/home/notes/presentation/views/no_notes_found.dart';
+import 'package:multiservices_app/features/home/chat/presentation/widgets/freinds_list_view_bloc_builder.dart';
+import 'package:multiservices_app/features/home/chat/states_manager/get_friends/get_friends_cubit.dart';
+
 import 'package:multiservices_app/generated/l10n.dart';
 
 class NewChatBottomSheet extends StatefulWidget {
@@ -17,6 +18,7 @@ class _NewChatBottomSheetState extends State<NewChatBottomSheet> {
   @override
   void initState() {
     textEditingController = TextEditingController();
+    BlocProvider.of<GetFriendsCubit>(context).getFriends();
     super.initState();
   }
 
@@ -38,11 +40,7 @@ class _NewChatBottomSheetState extends State<NewChatBottomSheet> {
               hintText: S.of(context).SearchbyName,
             ),
             SizedBox(height: 16),
-            // NoDataFound(
-            //   title: S.of(context).NoFriendsYetgoMakeSomeFreinds,
-            //   dataImage: AppImages.noUsers,
-            // ),
-            FreindListView(),
+            FreindsListViewBlocBuilder(),
           ],
         ),
       ),

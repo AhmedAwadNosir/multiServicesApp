@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/auth/data/repos/auth_repo_impl.dart';
 
 part 'signin_state.dart';
@@ -18,7 +19,7 @@ class SigninCubit extends Cubit<SigninState> {
     );
     result.fold(
       (failure) => emit(SigninFailure(errorMessage: failure.errorMessage)),
-      (userData) => emit(SigninSuccess()),
+      (userData) => emit(SigninSuccess(userData: userData)),
     );
   }
 }

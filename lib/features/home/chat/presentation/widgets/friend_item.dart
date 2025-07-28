@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
+import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/home/chat/data/models/user_modal.dart';
 import 'package:multiservices_app/features/home/chat/presentation/views/chat_view.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/chat_view_body.dart';
@@ -7,7 +8,7 @@ import 'package:multiservices_app/features/home/chat/presentation/widgets/custom
 
 class FriendsItem extends StatelessWidget {
   const FriendsItem({super.key, required this.userModal});
-  final FriendUserModal userModal;
+  final UserModal userModal;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,9 @@ class FriendsItem extends StatelessWidget {
       },
       child: Row(
         children: [
-          CustomProfilePhotoCircleAvatar(profileImage: AppImages.profilePhoto),
+          CustomProfilePhotoCircleAvatar(
+            profileImage: userModal.profilImageLink,
+          ),
           SizedBox(width: 12),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.65,

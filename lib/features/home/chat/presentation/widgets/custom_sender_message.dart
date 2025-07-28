@@ -1,7 +1,12 @@
+import 'dart:io';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
+import 'package:multiservices_app/features/home/chat/data/models/message_modal.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_profile_photo_circle_avatar.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_user_avatar.dart';
+import 'package:intl/intl.dart';
 
 class CustomSenderMessage extends StatelessWidget {
   const CustomSenderMessage({
@@ -9,21 +14,17 @@ class CustomSenderMessage extends StatelessWidget {
     required this.message,
     required this.userAvatar,
   });
-  final String message;
+  final MessageModal message;
   final String userAvatar;
+  // final MessageType messagetype;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: Row(
         children: [
-          CustomProfilePhotoCircleAvatar(
-            profileImage: AppImages.profilePhoto,
-            radius: 28,
-          ),
-          const SizedBox(width: 8),
           Container(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(8),
             constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width * 0.66,
             ),
@@ -31,10 +32,43 @@ class CustomSenderMessage extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(14),
             ),
-            child: Text(
-              message,
-              softWrap: true,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  DateFormat('dd/MM/yyyy').format(message.messageTime.toDate()),
+                  style: TextStyle(fontSize: 10),
+                ),
+                SizedBox(width: 50),
+                message.messageType == MessageType.text
+                    ? Text(
+                      message.messageContent,
+                      softWrap: true,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )
+                    : (message.messageType == MessageType.image
+                        ? SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.38,
+                          width: MediaQuery.of(context).size.height * 0.35,
+                          child: CachedNetworkImage(
+                            imageUrl: message.messageContent,
+                            fit: BoxFit.fill,
+                          ),
+                        )
+                        : (message.messageType == MessageType.voiceRecord
+                            ? Text("voiceRecord")
+                            : Text("File"))),
+                SizedBox(width: 60),
+                Text(
+                  DateFormat(
+                    'hh:mm a',
+                  ).format(message.messageTime.toDate()).toLowerCase(),
+                  style: TextStyle(fontSize: 10),
+                ),
+              ],
             ),
           ),
         ],

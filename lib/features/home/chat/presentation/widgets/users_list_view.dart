@@ -4,46 +4,11 @@ import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/home/chat/data/models/user_modal.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_add_firend_item.dart';
 
-class UsersListView extends StatefulWidget {
-  const UsersListView({super.key});
+class UsersListView extends StatelessWidget {
+  const UsersListView({super.key, required this.users});
 
-  @override
-  State<UsersListView> createState() => _UsersListViewState();
-}
+  final List<UserModal> users;
 
-class _UsersListViewState extends State<UsersListView> {
-  List<FriendUserModal> users = [
-    FriendUserModal(
-      docId: "",
-      userName: "Ahemd Awad",
-      profileImage: AppImages.profilePhoto,
-    ),
-    FriendUserModal(
-      docId: "",
-      userName: "Yousef Awad",
-      profileImage: AppImages.profilePhoto,
-    ),
-    FriendUserModal(
-      docId: "",
-      userName: "Ahemd Awad",
-      profileImage: AppImages.profilePhoto,
-    ),
-    FriendUserModal(
-      docId: "",
-      userName: "Yousef Awad",
-      profileImage: AppImages.profilePhoto,
-    ),
-    FriendUserModal(
-      docId: "",
-      userName: "Ahemd Awad",
-      profileImage: AppImages.profilePhoto,
-    ),
-    FriendUserModal(
-      docId: "",
-      userName: "Yousef Awad",
-      profileImage: AppImages.profilePhoto,
-    ),
-  ];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
 import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart';
+import 'package:multiservices_app/features/auth/functions/store_user_data_localy.dart';
 import 'package:multiservices_app/features/auth/presentation/widgets/sign_in_view_body_google_bloc_consumer.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_in/signin_cubit.dart';
 import 'package:multiservices_app/features/home/presentation/views/home_view.dart';
@@ -25,6 +26,7 @@ class LoginView extends StatelessWidget {
           }
           if (state is SigninSuccess) {
             if (FirebaseAuth.instance.currentUser!.emailVerified) {
+              storeUserDataLocaly(userModal: state.userData);
               Navigator.pushReplacementNamed(context, HomeView.id);
             } else {
               showErrorDialog(

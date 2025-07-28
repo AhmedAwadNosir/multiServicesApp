@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/features/home/chat/presentation/views/message_view.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/add_friends_view_body.dart';
+import 'package:multiservices_app/features/home/chat/presentation/widgets/add_friends_muilty_bloc_builder.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_tap_par.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/friend_requsts_view_Body.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/messages_view_body.dart';
+import 'package:multiservices_app/features/home/chat/presentation/widgets/freinds_reqs_view_muli_bloc_provider.dart';
 
 class ChatTap extends StatefulWidget {
   const ChatTap({super.key});
@@ -27,8 +26,8 @@ class _ChatTapState extends State<ChatTap> {
             child: TabBarView(
               children: [
                 MessageView(),
-                AddFriendsViewBody(),
-                FriendRequstsViewBody(),
+                AddFriendsMulitBlocProviders(),
+                FriendsReqsViewMuilyBlocProvider(),
               ],
             ),
           ),

@@ -1,8 +1,16 @@
 class UserModal {
   final String userName;
   final String profilImageLink;
-
-  UserModal({required this.userName, required this.profilImageLink});
+  String? docId;
+  String? chatRoom;
+  bool? isOnline;
+  UserModal({
+    required this.userName,
+    required this.profilImageLink,
+    this.docId,
+    this.chatRoom,
+    this.isOnline,
+  });
 
   factory UserModal.fromJson(dynamic json) {
     return UserModal(
@@ -12,6 +20,10 @@ class UserModal {
   }
 
   Map<String, dynamic> toJson() {
-    return {"userName": userName, 'profilImageLink': profilImageLink};
+    return {
+      "userName": userName,
+      'profilImageLink': profilImageLink,
+      "docId": docId ?? "",
+    };
   }
 }
