@@ -10,12 +10,15 @@ Stream<List<MessageModal>> getallMessagesForContact(UserModal userModal) {
       .collection(AppConstants.chatColection)
       .where('chatRoom', isEqualTo: userModal.chatRoom)
       .orderBy('messageTime', descending: true)
-      // optional: to sort messages
       .snapshots()
       .map(
-        (querySnap) =>
-            querySnap.docs
-                .map((doc) => MessageModal.fromJson(doc.data()))
-                .toList(),
+        (snapshot) =>
+            snapshot.docs.map((doc) {
+              final message = MessageModal.fromJson(
+                doc.data() as Map<String, dynamic>,
+              );
+              message.docId = doc.id;
+              return message;
+            }).toList(),
       );
 }

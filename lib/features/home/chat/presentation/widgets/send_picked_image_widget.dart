@@ -57,8 +57,8 @@ class SendPickedImageWidget extends StatelessWidget {
               } else {
                 String? imgdonloadUrl;
                 try {
-                  imgdonloadUrl = await uploadProfilegetUrl(
-                    profileImage: image!,
+                  imgdonloadUrl = await uploadfileGetUrl(
+                    file: image!,
                     imagePaht: AppConstants.messageImagesPaht,
                   );
                 } catch (e) {
@@ -79,6 +79,8 @@ class SendPickedImageWidget extends StatelessWidget {
                       seen: false,
                       delletReciver: false,
                       delletSender: false,
+                      downloaded: false,
+                      localPath: "",
                     ),
                     reciverModal: reciverModal,
                   );

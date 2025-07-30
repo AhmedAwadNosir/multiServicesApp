@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Content": MessageLookupByLibrary.simpleMessage("Content"),
     "Dellete": MessageLookupByLibrary.simpleMessage("Dellete"),
     "Discard": MessageLookupByLibrary.simpleMessage("Discard"),
+    "Download": MessageLookupByLibrary.simpleMessage("Download"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("Free Preview"),
@@ -64,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "NoNotesFound": MessageLookupByLibrary.simpleMessage("No Notes Found ?"),
     "NoUsersYet": MessageLookupByLibrary.simpleMessage("No Users Yet!"),
+    "Open": MessageLookupByLibrary.simpleMessage("Open"),
     "Pleasecheckyourinternetsettingsandtryagain":
         MessageLookupByLibrary.simpleMessage(
           "Please check your internet settings and try again.",
@@ -74,6 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SearchbyName": MessageLookupByLibrary.simpleMessage("Search by Name..."),
     "Sports": MessageLookupByLibrary.simpleMessage("Sports"),
     "StartNewChat": MessageLookupByLibrary.simpleMessage("Start New Chat!"),
+    "Tapeyourmessage": MessageLookupByLibrary.simpleMessage(
+      "Tape your message",
+    ),
     "Title": MessageLookupByLibrary.simpleMessage("Title"),
     "Typesomething": MessageLookupByLibrary.simpleMessage("Type something..."),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(

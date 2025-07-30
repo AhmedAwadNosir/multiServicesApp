@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multiservices_app/generated/l10n.dart';
 
 class CreateMessageTextFormField extends StatelessWidget {
   const CreateMessageTextFormField({
@@ -12,6 +13,7 @@ class CreateMessageTextFormField extends StatelessWidget {
   final void Function(String?)? onChanged;
   final TextEditingController textEditingController;
   final Widget? suffixIcon;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +27,7 @@ class CreateMessageTextFormField extends StatelessWidget {
 
         decoration: InputDecoration(
           errorMaxLines: 2,
-          hintText: "Tape your message",
+          hintText: S.of(context).Tapeyourmessage,
           suffixIcon: suffixIcon,
           hintStyle: TextStyle(
             color: Theme.of(

@@ -4,8 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
 import 'package:multiservices_app/features/home/chat/data/models/message_modal.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_profile_photo_circle_avatar.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_user_avatar.dart';
+import 'package:multiservices_app/features/home/chat/presentation/widgets/audio_chat_buble.dart';
+import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_file_widget.dart';
 import 'package:intl/intl.dart';
 
 class CustomSenderMessage extends StatelessWidget {
@@ -59,8 +59,11 @@ class CustomSenderMessage extends StatelessWidget {
                           ),
                         )
                         : (message.messageType == MessageType.voiceRecord
-                            ? Text("voiceRecord")
-                            : Text("File"))),
+                            ? AudioChatBuble(recordUrl: message.messageContent)
+                            : CustomFileWidget(
+                              fileUrl: message.messageContent,
+                              message: message,
+                            ))),
                 SizedBox(width: 60),
                 Text(
                   DateFormat(

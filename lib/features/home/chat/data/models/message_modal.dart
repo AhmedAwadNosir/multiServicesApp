@@ -19,6 +19,9 @@ class MessageModal {
   final bool seen;
   final bool delletReciver;
   final bool delletSender;
+  final bool downloaded;
+  final String localPath;
+  String? docId;
   MessageModal({
     required this.chatRoom,
     required this.messageType,
@@ -28,6 +31,9 @@ class MessageModal {
     required this.seen,
     required this.delletReciver,
     required this.delletSender,
+    this.docId,
+    required this.downloaded,
+    required this.localPath,
   });
 
   factory MessageModal.fromJson(dynamic json) {
@@ -40,6 +46,8 @@ class MessageModal {
       seen: json["seen"],
       delletReciver: json["delletReciver"],
       delletSender: json["delletSender"],
+      downloaded: json["downloaded"],
+      localPath: json["localPath"],
     );
   }
 
@@ -53,6 +61,8 @@ class MessageModal {
       "seen": seen,
       "delletReciver": delletReciver,
       "delletSender": delletSender,
+      "downloaded": downloaded,
+      "localPath": localPath,
     };
   }
 }

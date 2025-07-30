@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
     "Dellete": MessageLookupByLibrary.simpleMessage("حذف"),
     "Discard": MessageLookupByLibrary.simpleMessage("تجاهل"),
+    "Download": MessageLookupByLibrary.simpleMessage("تنزيل"),
     "Entertainment": MessageLookupByLibrary.simpleMessage("الترفيه"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
     "FreePreview": MessageLookupByLibrary.simpleMessage("معاينة مجانية"),
@@ -64,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "لم يتم العثور على ملاحظات؟",
     ),
     "NoUsersYet": MessageLookupByLibrary.simpleMessage("لا يوجد مستخدمون بعد!"),
+    "Open": MessageLookupByLibrary.simpleMessage("فتح"),
     "Pleasecheckyourinternetsettingsandtryagain":
         MessageLookupByLibrary.simpleMessage(
           "يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
@@ -76,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SearchbyName": MessageLookupByLibrary.simpleMessage("ابحث بالاسم..."),
     "Sports": MessageLookupByLibrary.simpleMessage("الرياضة"),
     "StartNewChat": MessageLookupByLibrary.simpleMessage("ابدأ محادثة جديدة!"),
+    "Tapeyourmessage": MessageLookupByLibrary.simpleMessage("اكتب رسالتك"),
     "Title": MessageLookupByLibrary.simpleMessage("العنوان"),
     "Typesomething": MessageLookupByLibrary.simpleMessage("اكتب شيئًا..."),
     "Welcometoourapp": MessageLookupByLibrary.simpleMessage(

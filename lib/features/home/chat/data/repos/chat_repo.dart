@@ -23,4 +23,10 @@ abstract class ChatRepo {
     required UserModal reciverModal,
   });
   Future<Either<FireFailure, List<ContactModal>>> getAllContact();
+  Future<Either<FireFailure, dynamic>> handleUserOnlineSatuslastSeenChatIn({
+    required String reciverDocId,
+  });
+  Future<Either<FireFailure, dynamic>> handleUserOnlineSatusChatOut({
+    required String reciverDocId,
+  });
 }

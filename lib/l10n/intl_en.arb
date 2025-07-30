@@ -73,6 +73,9 @@
     "AddFriend":"Add Friend",
     "Confirm": "Confirm",
     "NoFriendsYetgoMakeSomeFreinds":"NO Friends Yet! go Make Some Freinds?",
-    "SearchbyName": "Search by Name..."
+    "SearchbyName": "Search by Name...",
+    "Download": "Download",
+    "Open": "Open",
+    "Tapeyourmessage": "Tape your message"
 
 }

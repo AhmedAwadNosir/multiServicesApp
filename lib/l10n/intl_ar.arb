@@ -73,6 +73,9 @@
       "AddFriend": "أضف صديقًا",
       "Confirm": "تأكيد",
       "NoFriendsYetgoMakeSomeFreinds": "لا أصدقاء بعد! اذهب وكون بعض الأصدقاء؟",
-      "SearchbyName": "ابحث بالاسم..."
+      "SearchbyName": "ابحث بالاسم...",
+      "Download": "تنزيل",
+      "Open": "فتح",
+      "Tapeyourmessage": "اكتب رسالتك"
 
 }

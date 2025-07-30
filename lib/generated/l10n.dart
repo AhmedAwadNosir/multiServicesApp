@@ -629,6 +629,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Download`
+  String get Download {
+    return Intl.message('Download', name: 'Download', desc: '', args: []);
+  }
+
+  /// `Open`
+  String get Open {
+    return Intl.message('Open', name: 'Open', desc: '', args: []);
+  }
+
+  /// `Tape your message`
+  String get Tapeyourmessage {
+    return Intl.message(
+      'Tape your message',
+      name: 'Tapeyourmessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

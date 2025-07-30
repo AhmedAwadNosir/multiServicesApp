@@ -108,8 +108,8 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                             } else {
                               String? imgdonloadUrl;
                               try {
-                                imgdonloadUrl = await uploadProfilegetUrl(
-                                  profileImage: profileImage!,
+                                imgdonloadUrl = await uploadfileGetUrl(
+                                  file: profileImage!,
                                 );
                               } catch (e) {
                                 showErrorDialog(

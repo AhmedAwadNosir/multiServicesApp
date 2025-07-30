@@ -236,9 +236,13 @@ class ChatRepoImpl implements ChatRepo {
       );
       int numOfNewMessages = 0;
       bool isReciverOnline = false;
+      String reciverlasteMessage = "";
+      Timestamp reciverLastMessageTime = Timestamp(0, 0);
       if (snapshot.exists) {
         numOfNewMessages = snapshot.get("numOfNewMessages");
         isReciverOnline = snapshot.get("isOnline");
+        reciverlasteMessage = snapshot.get("lastMessage");
+        reciverLastMessageTime = snapshot.get("lastMessageTime");
       }
 
       // add message to chats
@@ -256,9 +260,9 @@ class ChatRepoImpl implements ChatRepo {
               name: reciverModal.userName,
               image: reciverModal.profilImageLink,
               docId: reciverModal.docId!,
-              lastMessageTime: Timestamp.now(),
+              lastMessageTime: reciverLastMessageTime,
               numOfNewMessages: 0,
-              lastMessage: messageModal.messageContent,
+              lastMessage: "",
               isOnline: isReciverOnline,
               chatRoom: messageModal.chatRoom,
             ).toJson(),
@@ -278,7 +282,10 @@ class ChatRepoImpl implements ChatRepo {
               docId: auth.currentUser!.uid,
               lastMessageTime: Timestamp.now(),
               numOfNewMessages: isReciverOnline ? 0 : ++numOfNewMessages,
-              lastMessage: messageModal.messageContent,
+              lastMessage:
+                  messageModal.messageType == MessageType.text
+                      ? messageModal.messageContent
+                      : reciverlasteMessage,
               isOnline: true,
               chatRoom: messageModal.chatRoom,
             ).toJson(),
@@ -308,6 +315,75 @@ class ChatRepoImpl implements ChatRepo {
         contacts.add(ContactModal.fromJson(doc));
       }
       return right(contacts);
+    } catch (e) {
+      if (e is FirebaseAuthException) {
+        return left(FirebaseFailure.fromFirebaseAuthError(e));
+      } else {
+        return left(FirebaseFailure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<FireFailure, dynamic>> handleUserOnlineSatuslastSeenChatIn({
+    required String reciverDocId,
+  }) async {
+    try {
+      DocumentSnapshot myContactData = await firebaseServieces
+          .getSubColectionDoc(
+            colecName: AppConstants.userColection,
+            docId: reciverDocId,
+            subColecName: AppConstants.contactsSubColection,
+            subColecdocId: auth.currentUser!.uid,
+          );
+      if (myContactData.exists) {
+        var myData = await firebaseServieces.updateSubColectDoc(
+          colecName: AppConstants.userColection,
+          docId: reciverDocId,
+          subColecName: AppConstants.contactsSubColection,
+          subColecdocId: auth.currentUser!.uid,
+          data: {"isOnline": true},
+        );
+        var reciverData = await firebaseServieces.updateSubColectDoc(
+          colecName: AppConstants.userColection,
+          docId: auth.currentUser!.uid,
+          subColecName: AppConstants.contactsSubColection,
+          subColecdocId: reciverDocId,
+          data: {"lastMessage": "", "numOfNewMessages": 0},
+        );
+      }
+      return right(dynamic);
+    } catch (e) {
+      if (e is FirebaseAuthException) {
+        return left(FirebaseFailure.fromFirebaseAuthError(e));
+      } else {
+        return left(FirebaseFailure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<FireFailure, dynamic>> handleUserOnlineSatusChatOut({
+    required String reciverDocId,
+  }) async {
+    try {
+      DocumentSnapshot myContactData = await firebaseServieces
+          .getSubColectionDoc(
+            colecName: AppConstants.userColection,
+            docId: reciverDocId,
+            subColecName: AppConstants.contactsSubColection,
+            subColecdocId: auth.currentUser!.uid,
+          );
+      if (myContactData.exists) {
+        var myData = await firebaseServieces.updateSubColectDoc(
+          colecName: AppConstants.userColection,
+          docId: reciverDocId,
+          subColecName: AppConstants.contactsSubColection,
+          subColecdocId: auth.currentUser!.uid,
+          data: {"isOnline": false},
+        );
+      }
+      return right(dynamic);
     } catch (e) {
       if (e is FirebaseAuthException) {
         return left(FirebaseFailure.fromFirebaseAuthError(e));

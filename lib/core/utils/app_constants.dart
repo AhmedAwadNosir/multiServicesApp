@@ -2,7 +2,8 @@ abstract class AppConstants {
   static const isDarkMode = 'isDarkMode';
   static const lang = 'lang';
   static const onbaordingIsViewd = 'onboardingIsViewed';
-  static const storagePacket = 'images';
+  static const storagePacketImages = 'images';
+  static const storagePacketrecords = 'records';
   static const userColection = "user";
   static const contactsSubColection = "myContacts";
   static const freindSubColection = "freinds";
@@ -14,4 +15,7 @@ abstract class AppConstants {
   static const kNotesBox = "NotesBox";
   static const profileImagesPaht = "ProfileImages";
   static const messageImagesPaht = "MessageImages";
+  static const recordsPaht = "records";
+  static const filesPocketPaht = "files";
+  static const filesPaht = "files";
 }
