@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:multiservices_app/core/utils/fuilureHandler/firebase_failure.dart';
@@ -64,8 +65,12 @@ class AuthRepoImpl implements AuthRepo {
       if (e is FirebaseAuthException) {
         return left(FirebaseFailure.fromFirebaseAuthError(e));
       } else {
-        log(e.toString());
-        return left(FirebaseFailure(e.toString()));
+        if (e.toString() ==
+            "'package:firebase_auth_platform_interface/src/providers/google_auth.dart': Failed assertion: line 43 pos 12: 'accessToken != null || idToken != null': At least one of ID token and access token is required") {
+          return left(FirebaseFailure(""));
+        } else {
+          return left(FirebaseFailure(e.toString()));
+        }
       }
     }
   }

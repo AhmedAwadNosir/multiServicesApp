@@ -18,4 +18,5 @@ abstract class AppConstants {
   static const recordsPaht = "records";
   static const filesPocketPaht = "files";
   static const filesPaht = "files";
+  static const feedBackMessages = "feedBackMessages";
 }

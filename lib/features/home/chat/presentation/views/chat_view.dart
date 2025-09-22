@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/home/chat/data/repos/chat_repo_impl.dart';
+import 'package:multiservices_app/features/home/chat/functions/check_if_user_exist.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/chat_view_body.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_profile_photo_circle_avatar.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/get_all_contacts/get_all_contacts_cubit.dart';
@@ -72,7 +73,15 @@ class _ChatViewState extends State<ChatView> {
             ],
           ),
         ),
-        body: ChatViewBody(reciverModal: widget.userModal),
+        body: FutureBuilder(
+          future: isUserExist(userDocId: widget.userModal.docId ?? ""),
+          builder: (context, snapshot) {
+            return ChatViewBody(
+              reciverModal: widget.userModal,
+              isUserExist: snapshot.data ?? true,
+            );
+          },
+        ),
       ),
     );
   }

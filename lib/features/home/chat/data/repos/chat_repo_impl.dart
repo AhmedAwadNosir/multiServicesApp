@@ -155,6 +155,13 @@ class ChatRepoImpl implements ChatRepo {
         UserModal freindData;
         freindData = UserModal.fromJson(doc);
         freindData.docId = doc.id;
+        final data = doc.data() as Map<String, dynamic>;
+        if (data.containsKey('chatRoom')) {
+          freindData.chatRoom = data['chatRoom'] as String?;
+        } else {
+          freindData.chatRoom =
+              null; // or some default like "" or generate a chatRoom
+        }
         friends.add(freindData);
       }
       print(friends);
@@ -221,7 +228,7 @@ class ChatRepoImpl implements ChatRepo {
   }
 
   @override
-  Future<Either<FireFailure, dynamic>> sendMessage({
+  Future<Either<FireFailure, String>> sendMessage({
     required MessageModal messageModal,
     required UserModal reciverModal,
   }) async {
@@ -292,7 +299,16 @@ class ChatRepoImpl implements ChatRepo {
         setOptionMerged: true,
         subcoldocId: auth.currentUser!.uid,
       );
-      return right(dynamic);
+      // add chat room to  friend in myfreindslist
+      var friendaddChatRoom = firebaseServieces.updateSubColectDoc(
+        colecName: AppConstants.userColection,
+        docId: auth.currentUser!.uid,
+        subColecName: AppConstants.freindSubColection,
+        subColecdocId: reciverModal.docId!,
+        data: {"chatRoom": messageModal.chatRoom},
+      );
+
+      return right(messageModal.chatRoom);
     } catch (e) {
       if (e is FirebaseAuthException) {
         return left(FirebaseFailure.fromFirebaseAuthError(e));

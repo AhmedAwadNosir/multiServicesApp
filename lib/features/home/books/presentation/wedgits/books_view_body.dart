@@ -49,7 +49,7 @@ class _BooksViewBodyState extends State<BooksViewBody> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("Filter", style: TextStyle(fontSize: 18)),
+                    Text(S.of(context).Filter, style: TextStyle(fontSize: 18)),
                     Icon(Icons.filter_alt_outlined, size: 22),
                   ],
                 ),

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:multiservices_app/features/home/notes/presentation/wedgits/custom_confiremation_button.dart';
 
 showConfermaTionDailog(
   BuildContext context, {
@@ -65,30 +66,4 @@ showConfermaTionDailog(
       );
     },
   );
-}
-
-class CustomConfarmationButton extends StatelessWidget {
-  const CustomConfarmationButton({
-    super.key,
-    this.onPressed,
-    required this.buttonName,
-    required this.buttonColor,
-  });
-  final void Function()? onPressed;
-  final String buttonName;
-  final Color buttonColor;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        backgroundColor: buttonColor,
-      ),
-      onPressed: onPressed,
-      child: Text(
-        buttonName,
-        style: const TextStyle(fontSize: 20, color: Colors.white),
-      ),
-    );
-  }
 }

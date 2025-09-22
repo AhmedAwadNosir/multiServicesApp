@@ -19,4 +19,6 @@ abstract class AppImages {
   static const noUsers = "assets/images/NoUsers.png";
   static const chatBackground = "assets/images/chat_background.jpeg";
   static const chatBackgroundLight = "assets/images/chat_background_light.jpg";
+  static const appDevelopmentcover = "assets/images/appDevelopment.jpg";
+  static const myImage = "assets/images/myimage.jpg";
 }

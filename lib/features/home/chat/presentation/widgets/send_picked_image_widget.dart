@@ -11,9 +11,10 @@ import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart';
 import 'package:multiservices_app/features/auth/functions/upload_image_geturl.dart';
 import 'package:multiservices_app/features/home/chat/data/models/message_modal.dart';
+import 'package:multiservices_app/features/home/chat/functions/compress_image.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/send_message/send_message_cubit.dart';
 
-class SendPickedImageWidget extends StatelessWidget {
+class SendPickedImageWidget extends StatefulWidget {
   const SendPickedImageWidget({
     super.key,
     required this.image,
@@ -22,6 +23,14 @@ class SendPickedImageWidget extends StatelessWidget {
 
   final File? image;
   final UserModal reciverModal;
+
+  @override
+  State<SendPickedImageWidget> createState() => _SendPickedImageWidgetState();
+}
+
+class _SendPickedImageWidgetState extends State<SendPickedImageWidget> {
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
@@ -34,7 +43,7 @@ class SendPickedImageWidget extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
-                image: FileImage(image!),
+                image: FileImage(widget.image!),
                 fit: BoxFit.fill,
               ),
             ),
@@ -56,12 +65,21 @@ class SendPickedImageWidget extends StatelessWidget {
                 showErrorConectionDialog(context: context);
               } else {
                 String? imgdonloadUrl;
+                setState(() {
+                  isLoading = true;
+                });
                 try {
+                  File? compresedImage = await compressImageAsFile(
+                    widget.image!,
+                  );
                   imgdonloadUrl = await uploadfileGetUrl(
-                    file: image!,
+                    file: compresedImage!,
                     imagePaht: AppConstants.messageImagesPaht,
                   );
                 } catch (e) {
+                  setState(() {
+                    isLoading = false;
+                  });
                   showErrorDialog(context: context, errorMessage: e.toString());
                 }
                 if (imgdonloadUrl != null) {
@@ -71,7 +89,8 @@ class SendPickedImageWidget extends StatelessWidget {
                   await BlocProvider.of<SendMessageCubit>(context).sendMessage(
                     messageModal: MessageModal(
                       chatRoom:
-                          "${reciverModal.docId!}${auth.currentUser!.uid}",
+                          widget.reciverModal.chatRoom ??
+                          "${widget.reciverModal.docId!}${auth.currentUser!.uid}",
                       messageType: MessageType.image,
                       messageContent: imgdonloadUrl,
                       messageTime: Timestamp.now(),
@@ -82,16 +101,24 @@ class SendPickedImageWidget extends StatelessWidget {
                       downloaded: false,
                       localPath: "",
                     ),
-                    reciverModal: reciverModal,
+                    reciverModal: widget.reciverModal,
                   );
+                  setState(() {
+                    isLoading = false;
+                  });
                 }
               }
             },
-            child: Icon(
-              Icons.send_rounded,
-              size: 36,
-              color: Theme.of(context).colorScheme.secondary,
-            ),
+            child:
+                isLoading == true
+                    ? CircularProgressIndicator(
+                      color: Theme.of(context).colorScheme.secondary,
+                    )
+                    : Icon(
+                      Icons.send_rounded,
+                      size: 36,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
           ),
           SizedBox(height: 12),
         ],

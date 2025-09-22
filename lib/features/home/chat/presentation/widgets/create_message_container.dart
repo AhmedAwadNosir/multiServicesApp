@@ -168,6 +168,7 @@ class _CreateMessageContainerFormState
                           ).sendMessage(
                             messageModal: MessageModal(
                               chatRoom:
+                                  widget.reciverUserModal.chatRoom ??
                                   "${widget.reciverUserModal.docId!}${auth.currentUser!.uid}",
                               messageType: MessageType.voiceRecord,
                               messageContent: recordUrl,
@@ -206,6 +207,7 @@ class _CreateMessageContainerFormState
                     BlocProvider.of<SendMessageCubit>(context).sendMessage(
                       messageModal: MessageModal(
                         chatRoom:
+                            widget.reciverUserModal.chatRoom ??
                             "${widget.reciverUserModal.docId!}${auth.currentUser!.uid}",
                         messageType: MessageType.text,
                         messageContent: messageContent,
@@ -225,6 +227,8 @@ class _CreateMessageContainerFormState
                       curve: Curves.bounceIn,
                     );
                     _textEditingController.clear();
+                    messageContent = '';
+                    setState(() {});
                   },
                   icon: Icon(
                     Icons.send,

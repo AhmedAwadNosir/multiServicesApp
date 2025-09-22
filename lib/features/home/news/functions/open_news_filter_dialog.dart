@@ -5,6 +5,9 @@ import 'package:multiservices_app/features/home/books/states_manager/get_best_se
 import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
 import 'package:multiservices_app/features/home/news/data/models/news_filter_options_modal.dart';
 import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
+import 'package:multiservices_app/generated/l10n.dart';
+import 'package:multiservices_app/l10n/localization_provider.dart';
+import 'package:provider/provider.dart';
 
 void openNewsFilterDialog(
   BuildContext context,
@@ -12,18 +15,30 @@ void openNewsFilterDialog(
   NewsFilterOptionsModal currentFilter,
 ) {
   final List<String> categories = [
-    "business",
-    "entertainment",
-    "general",
-    "health",
-    "science",
-    "sports",
-    "technology",
+    S.of(context).Business,
+    S.of(context).Entertainment,
+    S.of(context).general,
+    S.of(context).Health,
+    S.of(context).Science,
+    S.of(context).Sports,
+    S.of(context).technology,
   ];
+  Map<String, String> onArabicCategoryOrderBy = {
+    "الأعمال": "Business",
+    "الترفيه": "Entertainment",
+    "الصحة": "Health",
+    "العلوم": "Science",
+    "الرياضة": "Sports",
+    "التكنولوجيا": "technology",
+    "عام": "general",
+    "تاريخ النشر": "publishedAt",
+    "الملاءمة": "relevancy",
+    "الشعبية": "popularity",
+  };
   final List<String> orderByOptions = [
-    'publishedAt',
-    'relevancy',
-    "popularity",
+    S.of(context).publishedAt,
+    S.of(context).relevancy,
+    S.of(context).popularity,
   ];
   final List<String> lang = ['en', 'ar', 'fr', 'es'];
 
@@ -42,7 +57,7 @@ void openNewsFilterDialog(
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Book Type
-                Text("News Categroy"),
+                Text(S.of(context).NewsCategroy),
                 DropdownButton<String>(
                   value:
                       categories.contains(selectedCategory)
@@ -64,7 +79,7 @@ void openNewsFilterDialog(
 
                 // Order By
                 SizedBox(height: 10),
-                Text("Order By"),
+                Text(S.of(context).OrderBy),
                 DropdownButton<String>(
                   value:
                       orderByOptions.contains(selectedOrderBy)
@@ -86,7 +101,7 @@ void openNewsFilterDialog(
 
                 // Price Type
                 SizedBox(height: 10),
-                Text("News Language"),
+                Text(S.of(context).NewsLanguage),
                 DropdownButton<String>(
                   value:
                       lang.contains(selectedlang) ? selectedlang : lang.first,
@@ -115,21 +130,27 @@ void openNewsFilterDialog(
                       ),
                     );
 
-                    BlocProvider.of<GetBestSellerBooksCubit>(
-                      context,
-                    ).getBestSellerBooks(
-                      booksType: selectedCategory,
-                      filter: selectedlang,
-                      orderby: selectedOrderBy,
-                    );
-                    BlocProvider.of<GetNewsCubit>(context).getNews(
-                      category: selectedCategory,
-                      lang: selectedlang,
-                      sortBy: selectedOrderBy,
-                    );
+                    Locale currentLocal =
+                        Provider.of<LocalizationProvider>(
+                          context,
+                          listen: false,
+                        ).locale;
+                    if (currentLocal == Locale('ar')) {
+                      BlocProvider.of<GetNewsCubit>(context).getNews(
+                        category: onArabicCategoryOrderBy[selectedCategory],
+                        lang: selectedlang,
+                        sortBy: onArabicCategoryOrderBy[selectedOrderBy],
+                      );
+                    } else {
+                      BlocProvider.of<GetNewsCubit>(context).getNews(
+                        category: selectedCategory,
+                        lang: selectedlang,
+                        sortBy: selectedOrderBy,
+                      );
+                    }
                     Navigator.pop(context);
                   },
-                  child: Text("Apply Filter"),
+                  child: Text(S.of(context).ApplyFilter),
                 ),
               ],
             ),

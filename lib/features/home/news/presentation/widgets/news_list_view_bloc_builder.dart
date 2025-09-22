@@ -17,9 +17,7 @@ class NewsListViewBlocBuilder extends StatelessWidget {
         } else if (state is GetNewsSuccess) {
           return NewsListViewBuilder(news: state.news, physics: physics);
         } else {
-          return Column(
-            children: [SizedBox(height: 200), CircularProgressIndicator()],
-          );
+          return Center(child: CircularProgressIndicator());
         }
       },
     );

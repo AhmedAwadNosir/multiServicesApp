@@ -15,6 +15,7 @@ import 'package:multiservices_app/features/auth/presentation/widgets/custom_imag
 import 'package:multiservices_app/features/auth/presentation/widgets/custom_passowrd_text_form_field.dart';
 import 'package:multiservices_app/features/auth/presentation/widgets/custom_text_form_filed.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_up/signup_cubit.dart';
+import 'package:multiservices_app/features/home/chat/functions/compress_image.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 
 class SignupViewBody extends StatefulWidget {
@@ -108,8 +109,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                             } else {
                               String? imgdonloadUrl;
                               try {
+                                File? compresedImage =
+                                    await compressImageAsFile(profileImage!);
                                 imgdonloadUrl = await uploadfileGetUrl(
-                                  file: profileImage!,
+                                  file: compresedImage!,
                                 );
                               } catch (e) {
                                 showErrorDialog(

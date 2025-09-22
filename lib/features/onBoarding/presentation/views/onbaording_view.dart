@@ -43,7 +43,7 @@ class _OnbaordingViewState extends State<OnbaordingView> {
             onTap: () async {
               final prefs = await SharedPreferences.getInstance();
               await prefs.setBool(AppConstants.onbaordingIsViewd, true);
-              Navigator.pushNamed(context, LoginView.id);
+              Navigator.pushReplacementNamed(context, LoginView.id);
             },
             child: Text(
               S.of(context).skip,

@@ -18,7 +18,7 @@ abstract class ChatRepo {
   });
   Future<Either<FireFailure, List<UserModal>>> getFriends();
 
-  Future<Either<FireFailure, dynamic>> sendMessage({
+  Future<Either<FireFailure, String>> sendMessage({
     required MessageModal messageModal,
     required UserModal reciverModal,
   });

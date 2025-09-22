@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multiservices_app/core/utils/app_images.dart';
 import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/custom_loading_circle_progers.dart';
 import 'package:multiservices_app/features/home/chat/presentation/widgets/freinds_list_view.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/get_friends/get_friends_cubit.dart';
 import 'package:multiservices_app/features/home/notes/presentation/views/no_notes_found.dart';

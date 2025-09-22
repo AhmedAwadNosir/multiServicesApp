@@ -11,12 +11,13 @@ void spashNavigationControler(BuildContext context) async {
   final bool onboardingIsViewed =
       prefs.getBool(AppConstants.onbaordingIsViewd) ?? false;
   if (onboardingIsViewed) {
-    if (FirebaseAuth.instance.currentUser != null) {
-      Navigator.pushNamed(context, HomeView.id);
+    if (FirebaseAuth.instance.currentUser != null &&
+        FirebaseAuth.instance.currentUser!.emailVerified) {
+      Navigator.pushReplacementNamed(context, HomeView.id);
     } else {
-      Navigator.pushNamed(context, LoginView.id);
+      Navigator.pushReplacementNamed(context, LoginView.id);
     }
   } else {
-    Navigator.pushNamed(context, OnbaordingView.id);
+    Navigator.pushReplacementNamed(context, OnbaordingView.id);
   }
 }

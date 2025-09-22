@@ -7,7 +7,11 @@ final class SendMessageInitial extends SendMessageState {}
 
 final class SendMessageLoading extends SendMessageState {}
 
-final class SendMessageSuccess extends SendMessageState {}
+final class SendMessageSuccess extends SendMessageState {
+  final String chatRoom;
+
+  SendMessageSuccess({required this.chatRoom});
+}
 
 final class SendMessageFailure extends SendMessageState {
   final String errorMessage;

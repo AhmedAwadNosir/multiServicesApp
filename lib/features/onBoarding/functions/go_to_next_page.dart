@@ -11,7 +11,7 @@ void goToNextPage({
   final prefs = await SharedPreferences.getInstance();
   if (pageControler.page!.ceil() == onboardingLength) {
     await prefs.setBool(AppConstants.onbaordingIsViewd, true);
-    Navigator.pushNamed(context, LoginView.id);
+    Navigator.pushReplacementNamed(context, LoginView.id);
   } else {
     pageControler.nextPage(
       duration: Duration(microseconds: 300),

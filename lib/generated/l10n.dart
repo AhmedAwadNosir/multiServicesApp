@@ -649,6 +649,406 @@ class S {
       args: [],
     );
   }
+
+  /// `Account`
+  String get Account {
+    return Intl.message('Account', name: 'Account', desc: '', args: []);
+  }
+
+  /// `name`
+  String get Name {
+    return Intl.message('name', name: 'Name', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get Settings {
+    return Intl.message('Settings', name: 'Settings', desc: '', args: []);
+  }
+
+  /// `Contact Us`
+  String get ContactUs {
+    return Intl.message('Contact Us', name: 'ContactUs', desc: '', args: []);
+  }
+
+  /// `About Us`
+  String get AboutUs {
+    return Intl.message('About Us', name: 'AboutUs', desc: '', args: []);
+  }
+
+  /// `SignOut`
+  String get SignOut {
+    return Intl.message('SignOut', name: 'SignOut', desc: '', args: []);
+  }
+
+  /// `Are You sure you want to dellete your accout?`
+  String get AreYousureyouwanttodelleteyouraccout {
+    return Intl.message(
+      'Are You sure you want to dellete your accout?',
+      name: 'AreYousureyouwanttodelleteyouraccout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dellete Account`
+  String get DelleteAccount {
+    return Intl.message(
+      'Dellete Account',
+      name: 'DelleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get In Touch`
+  String get GetInTouch {
+    return Intl.message('Get In Touch', name: 'GetInTouch', desc: '', args: []);
+  }
+
+  /// `message`
+  String get message {
+    return Intl.message('message', name: 'message', desc: '', args: []);
+  }
+
+  /// `Send`
+  String get SendMessage {
+    return Intl.message('Send', name: 'SendMessage', desc: '', args: []);
+  }
+
+  /// `Contact Information`
+  String get ContactInformation {
+    return Intl.message(
+      'Contact Information',
+      name: 'ContactInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get Phone {
+    return Intl.message('Phone', name: 'Phone', desc: '', args: []);
+  }
+
+  /// `+01273856912`
+  String get myPhoneNumber {
+    return Intl.message(
+      '+01273856912',
+      name: 'myPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ahmedawadnosier@gmail.com`
+  String get myEmail {
+    return Intl.message(
+      'ahmedawadnosier@gmail.com',
+      name: 'myEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow Us`
+  String get FollowUs {
+    return Intl.message('Follow Us', name: 'FollowUs', desc: '', args: []);
+  }
+
+  /// `Ahmed Awad Nosier`
+  String get AhmedAwadNosier {
+    return Intl.message(
+      'Ahmed Awad Nosier',
+      name: 'AhmedAwadNosier',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Who I'm? :`
+  String get WhoIm {
+    return Intl.message('Who I`m? :', name: 'WhoIm', desc: '', args: []);
+  }
+
+  /// `I am a Software Engineer specialized in mobile development with Flutter. My expertise lies in building high-quality, scalable, and performant cross-platform applications that deliver seamless user experiences on both Android and iOS.`
+  String get IamaSoftwareEngineerspecializedinmobiledevelopmentwithFlutter {
+    return Intl.message(
+      'I am a Software Engineer specialized in mobile development with Flutter. My expertise lies in building high-quality, scalable, and performant cross-platform applications that deliver seamless user experiences on both Android and iOS.',
+      name: 'IamaSoftwareEngineerspecializedinmobiledevelopmentwithFlutter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I have strong foundations in software engineering principles, including clean architecture, state management, performance optimization, and testing. I follow best practices such as SOLID principles, design patterns, and CI/CD integration to ensure maintainable and production-ready code.`
+  String get Ihavestrongfoundationsinsoftwareengineeringprinciples {
+    return Intl.message(
+      'I have strong foundations in software engineering principles, including clean architecture, state management, performance optimization, and testing. I follow best practices such as SOLID principles, design patterns, and CI/CD integration to ensure maintainable and production-ready code.',
+      name: 'Ihavestrongfoundationsinsoftwareengineeringprinciples',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beyond just Flutter, I understand how to integrate backend services (REST APIs, Firebase, GraphQL), manage secure authentication, handle local/remote databases, and implement modern UI/UX designs with accessibility and localization in mind.`
+  String get BeyondjustFlutterIunderstandhowtointegratebackendservices {
+    return Intl.message(
+      'Beyond just Flutter, I understand how to integrate backend services (REST APIs, Firebase, GraphQL), manage secure authentication, handle local/remote databases, and implement modern UI/UX designs with accessibility and localization in mind.',
+      name: 'BeyondjustFlutterIunderstandhowtointegratebackendservices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `As a professional developer, I keep up to date with the Flutter ecosystem, contribute to problem-solving, and always aim to deliver applications that balance quality, scalability, and business value.`
+  String get Asaprofessionaldeveloper {
+    return Intl.message(
+      'As a professional developer, I keep up to date with the Flutter ecosystem, contribute to problem-solving, and always aim to deliver applications that balance quality, scalability, and business value.',
+      name: 'Asaprofessionaldeveloper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Values :`
+  String get Values {
+    return Intl.message('Values :', name: 'Values', desc: '', args: []);
+  }
+
+  /// `- Customer satisfaction is my top priority`
+  String get Customersatisfactionismytoppriority {
+    return Intl.message(
+      '- Customer satisfaction is my top priority',
+      name: 'Customersatisfactionismytoppriority',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `- I strive for continous improvment`
+  String get Istriveforcontinousimprovment {
+    return Intl.message(
+      '- I strive for continous improvment',
+      name: 'Istriveforcontinousimprovment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `- I value honesty and integrity in all my actions`
+  String get Ivaluehonestyandintegrityinallmyactions {
+    return Intl.message(
+      '- I value honesty and integrity in all my actions',
+      name: 'Ivaluehonestyandintegrityinallmyactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get DarkMode {
+    return Intl.message('Dark Mode', name: 'DarkMode', desc: '', args: []);
+  }
+
+  /// `On`
+  String get On {
+    return Intl.message('On', name: 'On', desc: '', args: []);
+  }
+
+  /// `Off`
+  String get Off {
+    return Intl.message('Off', name: 'Off', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get Language {
+    return Intl.message('Language', name: 'Language', desc: '', args: []);
+  }
+
+  /// `English`
+  String get English {
+    return Intl.message('English', name: 'English', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get Arabic {
+    return Intl.message('Arabic', name: 'Arabic', desc: '', args: []);
+  }
+
+  /// `Filter`
+  String get Filter {
+    return Intl.message('Filter', name: 'Filter', desc: '', args: []);
+  }
+
+  /// `technology`
+  String get technology {
+    return Intl.message('technology', name: 'technology', desc: '', args: []);
+  }
+
+  /// `general`
+  String get general {
+    return Intl.message('general', name: 'general', desc: '', args: []);
+  }
+
+  /// `publishedAt`
+  String get publishedAt {
+    return Intl.message('publishedAt', name: 'publishedAt', desc: '', args: []);
+  }
+
+  /// `relevancy`
+  String get relevancy {
+    return Intl.message('relevancy', name: 'relevancy', desc: '', args: []);
+  }
+
+  /// `popularity`
+  String get popularity {
+    return Intl.message('popularity', name: 'popularity', desc: '', args: []);
+  }
+
+  /// `News Categroy`
+  String get NewsCategroy {
+    return Intl.message(
+      'News Categroy',
+      name: 'NewsCategroy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order By`
+  String get OrderBy {
+    return Intl.message('Order By', name: 'OrderBy', desc: '', args: []);
+  }
+
+  /// `News Language`
+  String get NewsLanguage {
+    return Intl.message(
+      'News Language',
+      name: 'NewsLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply Filter`
+  String get ApplyFilter {
+    return Intl.message(
+      'Apply Filter',
+      name: 'ApplyFilter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `programing`
+  String get programing {
+    return Intl.message('programing', name: 'programing', desc: '', args: []);
+  }
+
+  /// `romance`
+  String get romance {
+    return Intl.message('romance', name: 'romance', desc: '', args: []);
+  }
+
+  /// `mystery`
+  String get mystery {
+    return Intl.message('mystery', name: 'mystery', desc: '', args: []);
+  }
+
+  /// `fantasy`
+  String get fantasy {
+    return Intl.message('fantasy', name: 'fantasy', desc: '', args: []);
+  }
+
+  /// `science fiction`
+  String get sciencefiction {
+    return Intl.message(
+      'science fiction',
+      name: 'sciencefiction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `historical fiction`
+  String get historicalfiction {
+    return Intl.message(
+      'historical fiction',
+      name: 'historicalfiction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `biography`
+  String get biography {
+    return Intl.message('biography', name: 'biography', desc: '', args: []);
+  }
+
+  /// `self-help`
+  String get selfhelp {
+    return Intl.message('self-help', name: 'selfhelp', desc: '', args: []);
+  }
+
+  /// `young adult`
+  String get youngadult {
+    return Intl.message('young adult', name: 'youngadult', desc: '', args: []);
+  }
+
+  /// `true crime`
+  String get truecrime {
+    return Intl.message('true crime', name: 'truecrime', desc: '', args: []);
+  }
+
+  /// `children`
+  String get children {
+    return Intl.message('children', name: 'children', desc: '', args: []);
+  }
+
+  /// `newest`
+  String get newest {
+    return Intl.message('newest', name: 'newest', desc: '', args: []);
+  }
+
+  /// `relevance`
+  String get relevance {
+    return Intl.message('relevance', name: 'relevance', desc: '', args: []);
+  }
+
+  /// `free-ebooks`
+  String get freeebooks {
+    return Intl.message('free-ebooks', name: 'freeebooks', desc: '', args: []);
+  }
+
+  /// `paid-ebooks`
+  String get paidebooks {
+    return Intl.message('paid-ebooks', name: 'paidebooks', desc: '', args: []);
+  }
+
+  /// `ebooks`
+  String get ebooks {
+    return Intl.message('ebooks', name: 'ebooks', desc: '', args: []);
+  }
+
+  /// `Book Type`
+  String get BookType {
+    return Intl.message('Book Type', name: 'BookType', desc: '', args: []);
+  }
+
+  /// `Price Type`
+  String get PriceType {
+    return Intl.message('Price Type', name: 'PriceType', desc: '', args: []);
+  }
+
+  /// `This user no longer exists`
+  String get Thisusernolongerexists {
+    return Intl.message(
+      'This user no longer exists',
+      name: 'Thisusernolongerexists',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -12,6 +12,8 @@ import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart';
 import 'package:multiservices_app/features/auth/functions/upload_image_geturl.dart';
 import 'package:multiservices_app/features/home/chat/data/models/message_modal.dart';
+import 'package:multiservices_app/features/home/chat/functions/compress_file.dart';
+import 'package:multiservices_app/features/home/chat/functions/file_to_platform_file.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/send_message/send_message_cubit.dart';
 
 class SendPickedFileWidget extends StatefulWidget {
@@ -29,6 +31,7 @@ class SendPickedFileWidget extends StatefulWidget {
 }
 
 class _SendPickedFileWidgetState extends State<SendPickedFileWidget> {
+  bool isloding = false;
   @override
   Widget build(BuildContext context) {
     final fileextintion = widget.file.name.split('.').last.toLowerCase();
@@ -75,20 +78,30 @@ class _SendPickedFileWidgetState extends State<SendPickedFileWidget> {
                 if (!hasInternetAcess) {
                   showErrorConectionDialog(context: context);
                 } else {
+                  setState(() {
+                    isloding = true;
+                  });
                   String? fileDownloadUrl;
-                  String fileAlterName = widget.file.name
+                  File relsut = await compressFile(File(widget.file.path!));
+                  PlatformFile compressedFile = await fileToPlatformFile(
+                    relsut,
+                  );
+                  String fileAlterName = compressedFile.name
                       .toLowerCase()
                       .replaceAll(' ', '_')
                       .replaceAll(RegExp(r'[^\w\.\-_]'), '');
                   final storagePath = 'files/$fileAlterName';
                   try {
                     fileDownloadUrl = await uploadfileGetUrl(
-                      file: File(widget.file.path!),
+                      file: File(compressedFile.path!),
                       imagePaht: AppConstants.filesPaht,
                       folderBocketName: AppConstants.filesPocketPaht,
                       fullPath: storagePath,
                     );
                   } catch (e) {
+                    setState(() {
+                      isloding = false;
+                    });
                     showErrorDialog(
                       context: context,
                       errorMessage: e.toString(),
@@ -102,6 +115,7 @@ class _SendPickedFileWidgetState extends State<SendPickedFileWidget> {
                     ).sendMessage(
                       messageModal: MessageModal(
                         chatRoom:
+                            widget.reciverModal.chatRoom ??
                             "${widget.reciverModal.docId!}${auth.currentUser!.uid}",
                         messageType: MessageType.file,
                         messageContent: fileDownloadUrl,
@@ -115,14 +129,22 @@ class _SendPickedFileWidgetState extends State<SendPickedFileWidget> {
                       ),
                       reciverModal: widget.reciverModal,
                     );
+                    setState(() {
+                      isloding = false;
+                    });
                   }
                 }
               },
-              child: Icon(
-                Icons.send_rounded,
-                size: 36,
-                color: Theme.of(context).colorScheme.secondary,
-              ),
+              child:
+                  isloding
+                      ? CircularProgressIndicator(
+                        color: Theme.of(context).colorScheme.secondary,
+                      )
+                      : Icon(
+                        Icons.send_rounded,
+                        size: 36,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
             ),
           ],
         ),

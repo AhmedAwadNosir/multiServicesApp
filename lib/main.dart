@@ -8,17 +8,22 @@ import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/core/theme/theme_provider.dart';
 import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:multiservices_app/core/utils/app_routes.dart';
+import 'package:multiservices_app/features/auth/data/repos/auth_repo_impl.dart';
+import 'package:multiservices_app/features/auth/states_manager/sign_in/signin_cubit.dart';
+import 'package:multiservices_app/features/auth/states_manager/sign_in_google/signingoogle_cubit.dart';
 import 'package:multiservices_app/features/home/books/data/repos/book_repo_impl.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_best_seller_books/get_best_seller_books_cubit.dart';
 import 'package:multiservices_app/features/home/books/states_manager/get_top_books/get_top_books_cubit.dart';
 import 'package:multiservices_app/features/home/chat/data/repos/chat_repo_impl.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/get_all_contacts/get_all_contacts_cubit.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/send_message/send_message_cubit.dart';
+import 'package:multiservices_app/features/home/chat/states_manager/update_chat_room/update_chat_room_cubit.dart';
 import 'package:multiservices_app/features/home/news/data/repos/news_repo_impl.dart';
 import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
 import 'package:multiservices_app/features/home/notes/data/models/note_modal.dart';
 import 'package:multiservices_app/features/home/notes/states_manager/edit_notes_confirmation/edit_notes_confirmation_cubit.dart';
 import 'package:multiservices_app/features/home/notes/states_manager/get_notes/get_notes_cubit.dart';
+import 'package:multiservices_app/features/home/states_manager/get_user_data/get_user_data_cubit.dart';
 import 'package:multiservices_app/features/onBoarding/presentation/views/splash_view.dart';
 import 'package:multiservices_app/generated/l10n.dart';
 import 'package:multiservices_app/l10n/localization_provider.dart';
@@ -68,6 +73,19 @@ class MultiServicesApp extends StatelessWidget {
         BlocProvider(create: (context) => GetNewsCubit(NewsRepoImpl())),
         BlocProvider(create: (context) => GetNotesCubit()),
         BlocProvider(create: (context) => EditNotesConfirmationCubit()),
+        BlocProvider(create: (context) => GetUserDataCubit()),
+        BlocProvider(
+          create:
+              (context) => SigninCubit(
+                AuthRepoImpl(firebaseServieces: FirebaseServieces()),
+              ),
+        ),
+        BlocProvider(
+          create:
+              (context) => SigningoogleCubit(
+                AuthRepoImpl(firebaseServieces: FirebaseServieces()),
+              ),
+        ),
         BlocProvider(
           create:
               (context) => SendMessageCubit(
@@ -86,6 +104,7 @@ class MultiServicesApp extends StatelessWidget {
                 ),
               ),
         ),
+        BlocProvider(create: (context) => UpdateChatRoomCubit()),
       ],
 
       child: MaterialApp(

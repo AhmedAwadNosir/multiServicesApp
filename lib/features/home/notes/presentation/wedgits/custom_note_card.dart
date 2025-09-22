@@ -70,7 +70,11 @@ class CustomNoteCard extends StatelessWidget {
                           },
                         );
                       },
-                      child: const Icon(Icons.delete, size: 35),
+                      child: const Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                        size: 35,
+                      ),
                     )
                     : const SizedBox(),
               ],

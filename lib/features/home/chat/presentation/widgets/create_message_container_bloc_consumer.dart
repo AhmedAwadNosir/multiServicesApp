@@ -5,6 +5,7 @@ import 'package:multiservices_app/features/auth/functions/show_error_dialog.dart
 import 'package:multiservices_app/features/home/chat/presentation/widgets/create_message_container.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/get_all_contacts/get_all_contacts_cubit.dart';
 import 'package:multiservices_app/features/home/chat/states_manager/send_message/send_message_cubit.dart';
+import 'package:multiservices_app/features/home/chat/states_manager/update_chat_room/update_chat_room_cubit.dart';
 
 class CreateMessageContainerBlocConsumer extends StatelessWidget {
   const CreateMessageContainerBlocConsumer({
@@ -22,6 +23,9 @@ class CreateMessageContainerBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is SendMessageSuccess) {
           BlocProvider.of<GetAllContactsCubit>(context).getAllContacts();
+          BlocProvider.of<UpdateChatRoomCubit>(
+            context,
+          ).updateChatRoom(newchatRoom: state.chatRoom);
         }
         if (state is SendMessageFailure) {
           showErrorDialog(context: context, errorMessage: state.errorMessage);

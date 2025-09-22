@@ -6,6 +6,7 @@ import 'package:multiservices_app/features/home/news/presentation/widgets/news_c
 import 'package:multiservices_app/features/home/news/presentation/widgets/news_list_view_bloc_builder.dart';
 import 'package:multiservices_app/features/home/news/presentation/widgets/news_logo.dart';
 import 'package:multiservices_app/features/home/news/states_manager/get_news/get_news_cubit.dart';
+import 'package:multiservices_app/generated/l10n.dart';
 
 class NewsViewBody extends StatefulWidget {
   const NewsViewBody({super.key});
@@ -54,7 +55,10 @@ class _NewsViewBodyState extends State<NewsViewBody> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text("Filter", style: TextStyle(fontSize: 18)),
+                          Text(
+                            S.of(context).Filter,
+                            style: TextStyle(fontSize: 18),
+                          ),
                           Icon(Icons.filter_alt_outlined, size: 22),
                         ],
                       ),

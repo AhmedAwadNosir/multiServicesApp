@@ -16,7 +16,10 @@ class SignInViewBodyGoogleBlocConsumer extends StatelessWidget {
     return BlocConsumer<SigningoogleCubit, SigningoogleState>(
       listener: (context, state) {
         if (state is SigningoogleFailure) {
-          showErrorDialog(context: context, errorMessage: state.errorMessage);
+          if (state.errorMessage == "") {
+          } else {
+            showErrorDialog(context: context, errorMessage: state.errorMessage);
+          }
         }
         if (state is SigningoogleSuccess) {
           storeUserDataLocaly(userModal: state.userModal);
