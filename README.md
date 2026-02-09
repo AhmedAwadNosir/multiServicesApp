@@ -1,6 +1,15 @@
 # multiservices_app
 
-A new Flutter project.
+MultiServicesApp is a Flutter application that includes everything I’ve learned in Flutter development, combining multiple core features with clean architecture and modern practices.
+
+• Bookly Feature: Displays books from a REST API with advanced filtering.
+• News Feature: Shows the latest news with filters for country, language, and category.
+• Notes Feature: Lets users create, edit, and delete daily notes stored locally using Hive.
+• Real‑Time Chat Feature: Firebase‑based chat with friend requests, chat rooms, and support for messages, files, images, and audio.
+• Localization: Supports Arabic and English languages.
+• Theming: Offers light and dark mode for improved user experience.
+
+The app is built using MVVM architecture, Repository pattern, and Cubit state management for clean, maintainable, and efficient code.
 
 ## Getting Started
 
