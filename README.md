@@ -81,7 +81,7 @@ MultiServicesApp is a Flutter application that showcases everything I’ve learn
 
 ## 📥 Download APK
 
-[![Download APK](https://img.shields.io/badge/Download-APK‑Here‑00BCD4?style=for-the-badge&logo=android&logoColor=white)](https://github.com/AhmedAwadNosir/multiServicesApp/releases/tag/v1.0.0)
+[![Download APK](https://img.shields.io/badge/Download-APK‑Here‑00BCD4?style=for-the-badge&logo=android&logoColor=white)](https://github.com/AhmedAwadNosir/multiServicesApp/releases/download/v1.0.0/app-release.apk)
 
 
 ---
