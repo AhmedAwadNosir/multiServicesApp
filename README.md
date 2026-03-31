@@ -85,7 +85,7 @@ MultiServicesApp is a Flutter application that showcases everything I’ve learn
 
 ---
 ## 🎥 App Demo
-[![Watch Demo](https://github."https://github.com/AhmedAwadNosir/multiservicesAppAssets/blob/63f2220a655d1f8511aed0d0133a379adea07d45/images/lightmode/1splashScreen.jpg)](https://github.com/AhmedAwadNosir/multiServicesApp/releases/download/untagged-874d8e9d9830c40e6508/demo.mp4)
+[![Watch Demo]("https://github."https://github.com/AhmedAwadNosir/multiservicesAppAssets/blob/63f2220a655d1f8511aed0d0133a379adea07d45/images/lightmode/1splashScreen.jpg")](https://github.com/AhmedAwadNosir/multiServicesApp/releases/download/untagged-874d8e9d9830c40e6508/demo.mp4)
 
 ## 👨‍💻 Author
 
