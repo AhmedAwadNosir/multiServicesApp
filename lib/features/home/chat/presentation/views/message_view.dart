@@ -18,7 +18,8 @@ class MessageView extends StatefulWidget {
 class _MessageViewState extends State<MessageView> {
   @override
   void initState() {
-    BlocProvider.of<GetAllContactsCubit>(context).getAllContacts();
+    // i use stream builder insted of cubit to git change in live time
+    // BlocProvider.of<GetAllContactsCubit>(context).getAllContacts();
     super.initState();
   }
 

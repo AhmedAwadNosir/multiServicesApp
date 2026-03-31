@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/auth/data/repos/auth_repo_impl.dart';
@@ -8,9 +9,9 @@ part 'signingoogle_state.dart';
 class SigningoogleCubit extends Cubit<SigningoogleState> {
   SigningoogleCubit(this._authRepoImpl) : super(SigningoogleInitial());
   final AuthRepoImpl _authRepoImpl;
-  Future<void> signInGoogle() async {
+  Future<void> signInGoogle({required BuildContext context}) async {
     emit(SigningoogleLoading());
-    var reslut = await _authRepoImpl.signInWithGoogle();
+    var reslut = await _authRepoImpl.signInWithGoogle(context: context);
     reslut.fold(
       (failure) =>
           emit(SigningoogleFailure(errorMessage: failure.errorMessage)),

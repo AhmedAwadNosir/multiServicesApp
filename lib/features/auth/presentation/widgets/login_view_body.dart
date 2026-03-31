@@ -130,7 +130,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       } else {
                         BlocProvider.of<SigningoogleCubit>(
                           context,
-                        ).signInGoogle();
+                        ).signInGoogle(context: context);
                       }
                     },
                     backgroundColor: Theme.of(context).colorScheme.primary,

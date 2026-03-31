@@ -8,6 +8,7 @@ import 'package:multiservices_app/features/auth/functions/store_user_data_localy
 import 'package:multiservices_app/features/auth/presentation/widgets/sign_in_view_body_google_bloc_consumer.dart';
 import 'package:multiservices_app/features/auth/states_manager/sign_in/signin_cubit.dart';
 import 'package:multiservices_app/features/home/presentation/views/home_view.dart';
+import 'package:multiservices_app/generated/l10n.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -32,7 +33,9 @@ class LoginView extends StatelessWidget {
               showErrorDialog(
                 context: context,
                 errorMessage:
-                    "Your email is not verified go to emialbox and verify your email",
+                    S
+                        .of(context)
+                        .Youremailisnotverifiedgotoemialboxandverifyyouremail,
               );
             }
           }

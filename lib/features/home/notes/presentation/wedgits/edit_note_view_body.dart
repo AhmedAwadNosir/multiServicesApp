@@ -71,6 +71,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               intialValue: widget.noteModal.title,
               fontSize: 33,
               hintFontSize: 48,
+              textColor: Theme.of(context).colorScheme.secondary,
             ),
             const SizedBox(height: 12),
             EditNoteCustomTextFormFilled(
@@ -82,6 +83,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               intialValue: widget.noteModal.description,
               fontSize: 22,
               fontWeight: FontWeight.w400,
+              textColor: Theme.of(context).colorScheme.secondary,
             ),
           ],
         ),

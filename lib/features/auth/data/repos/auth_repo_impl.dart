@@ -3,12 +3,14 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/core/utils/app_constants.dart';
 import 'package:multiservices_app/core/utils/fuilureHandler/firebase_failure.dart';
 import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 import 'package:multiservices_app/features/auth/data/repos/auth_repo.dart';
+import 'package:multiservices_app/generated/l10n.dart';
 
 class AuthRepoImpl implements AuthRepo {
   final FirebaseServieces firebaseServieces;
@@ -39,8 +41,11 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  // update sign in with google to handle error of time of phone not correct
   @override
-  Future<Either<FireFailure, UserModal>> signInWithGoogle() async {
+  Future<Either<FireFailure, UserModal>> signInWithGoogle({
+    required BuildContext context,
+  }) async {
     try {
       var credintial = await firebaseServieces.signInWithGoogle();
 
@@ -62,16 +67,42 @@ class AuthRepoImpl implements AuthRepo {
 
       return right(UserModal.fromJson(snapshot.data()));
     } catch (e) {
+      /// 🔴 1. Firebase Auth Errors
       if (e is FirebaseAuthException) {
         return left(FirebaseFailure.fromFirebaseAuthError(e));
-      } else {
-        if (e.toString() ==
-            "'package:firebase_auth_platform_interface/src/providers/google_auth.dart': Failed assertion: line 43 pos 12: 'accessToken != null || idToken != null': At least one of ID token and access token is required") {
-          return left(FirebaseFailure(""));
-        } else {
-          return left(FirebaseFailure(e.toString()));
-        }
       }
+
+      /// 🔴 2. Platform Exceptions (Google Sign-In, etc.)
+      if (e is PlatformException) {
+        final code = e.code.toLowerCase();
+        final message = e.message?.toLowerCase() ?? "";
+
+        /// 👉 Case: Google token null issue
+        if (message.contains("access token") || message.contains("id token")) {
+          return left(
+            FirebaseFailure(
+              "LoginCanceled", // or custom message
+            ),
+          );
+        }
+
+        /// 👉 Case: Generic Google sign-in error
+        if (code == "exception" || message.contains("error")) {
+          return left(
+            FirebaseFailure(
+              S
+                  .of(context)
+                  .PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect,
+            ),
+          );
+        }
+
+        /// 👉 Unknown platform error
+        return left(FirebaseFailure("UnexpectedError pleas try again later"));
+      }
+
+      /// 🔴 3. Fallback (any other error)
+      return left(FirebaseFailure(e.toString()));
     }
   }
 

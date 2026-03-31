@@ -137,8 +137,9 @@
       "ebooks":"كتب إلكترونيّة",
       "BookType":"نوع الكتاب",
       "PriceType":"نوع السعر",
-      "Thisusernolongerexists":"هذا المستخدم لم يعد موجودا"
-
+      "Thisusernolongerexists":"هذا المستخدم لم يعد موجودا",
+      "Youremailisnotverifiedgotoemialboxandverifyyouremail":"بريدك الإلكتروني غير مُفعّل. يرجى التحقق من بريدك الإلكتروني لتفعيل الحساب",
+      "PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect":"يرجى تصحيح الوقت (ص/م) ثم المحاولة مرة أخرى"
 
 }
 

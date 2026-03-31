@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multiservices_app/features/home/chat/presentation/widgets/chat_rooms_list_view_bloc_builder.dart';
+import 'package:multiservices_app/features/home/chat/presentation/widgets/chat_rooms_list_view_stream_builder.dart';
 
 import 'package:multiservices_app/generated/l10n.dart';
 
@@ -21,7 +21,7 @@ class MessagesViewBody extends StatelessWidget {
 
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.60,
-            child: ChatRoomsListViewBlocBuilder(),
+            child: ChatRoomsListVieStreamBuilder(),
           ),
         ],
       ),

@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/services/firebase_servieces.dart';
 import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
-
 import 'package:multiservices_app/features/home/chat/data/models/contac_modal.dart';
 import 'package:multiservices_app/features/home/chat/data/repos/chat_repo_impl.dart';
 import 'package:multiservices_app/features/home/chat/presentation/views/chat_view.dart';

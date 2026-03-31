@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-import 'package:multiservices_app/core/utils/widgets/test_language_and_thiming_widget.dart';
 import 'package:multiservices_app/features/home/books/presentation/wedgits/books_view_body.dart';
 import 'package:multiservices_app/features/home/notes/presentation/views/notes_view.dart';
 import 'package:multiservices_app/features/home/chat/presentation/views/chat_tap.dart';
@@ -66,17 +64,15 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           children: [
-            TestLnaguageAndThimingWidget(),
-            // SizedBox(height: screenHight * 0.05),
             UserDataAppBarr(),
             selectedIndex != 3
                 ? isConectedToTheInternet
                     ? SizedBox(
-                      height: screenHight * 0.775,
+                      height: screenHight * 0.85,
                       child: pages[selectedIndex],
                     )
                     : SizedBox(
-                      height: screenHight * 0.775,
+                      height: screenHight * 0.85,
                       child: NoInternetConectionWidget(),
                     )
                 : SizedBox(

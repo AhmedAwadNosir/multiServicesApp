@@ -59,14 +59,14 @@ class _ChatViewState extends State<ChatView> {
 
               CustomProfilePhotoCircleAvatar(
                 profileImage: widget.userModal.profilImageLink,
-                radius: 20,
+                radius: 24,
               ),
               SizedBox(width: 6),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.65,
                 child: Text(
                   widget.userModal.userName,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

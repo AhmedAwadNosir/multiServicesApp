@@ -408,4 +408,27 @@ class ChatRepoImpl implements ChatRepo {
       }
     }
   }
+
+  // this for gitting contacts in live time with stream but i use noraml stream builder
+  // @override
+  // Stream<Either<FireFailure, List<ContactModal>>> getAllContactStream() async* {
+  //   try {
+  //     final streamData = firebaseServieces.getSubColectionStream(
+  //       colecName: AppConstants.userColection,
+  //       docId: auth.currentUser!.uid,
+  //       subColecName: AppConstants.contactsSubColection,
+  //     );
+  //     List<ContactModal> contacts = [];
+  //     await for (var data in streamData) {
+  //       contacts = data.docs.map((doc) => ContactModal.fromJson(doc)).toList();
+  //     }
+  //     yield right(contacts);
+  //   } catch (e) {
+  //     if (e is FirebaseAuthException) {
+  //       yield left(FirebaseFailure.fromFirebaseAuthError(e));
+  //     } else {
+  //       yield left(FirebaseFailure(e.toString()));
+  //     }
+  //   }
+  // }
 }

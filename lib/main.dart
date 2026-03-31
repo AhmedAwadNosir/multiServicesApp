@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -43,10 +44,12 @@ void main() async {
   Hive.openBox<NoteModal>(AppConstants.kNotesBox);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Supabase.initialize(
-    url: "https://sdgunsqqtcskclxgtydj.supabase.co",
+    url: "https://aphooecbxejszstzukhc.supabase.co",
     anonKey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkZ3Vuc3FxdGNza2NseGd0eWRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxODgxODYsImV4cCI6MjA2MTc2NDE4Nn0.Bx37A1YlnPjEXmUy8FkGnK886kPKrKeKaQCuy7I2EaY",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwaG9vZWNieGVqc3pzdHp1a2hjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3NTkxMTIsImV4cCI6MjA5MDMzNTExMn0.ddJURx7mOw_StoFqxFrIE3-GWUaZFlH5US26Tg5SS8w",
   );
+  // this method to hide phone top par and phone navigation controler show it when swap for mini seconds
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(isDarkMode),
@@ -109,6 +112,7 @@ class MultiServicesApp extends StatelessWidget {
 
       child: MaterialApp(
         locale: Provider.of<LocalizationProvider>(context).locale,
+
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

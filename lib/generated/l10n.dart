@@ -1049,6 +1049,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Your email is not verified go to emialbox and verify your email`
+  String get Youremailisnotverifiedgotoemialboxandverifyyouremail {
+    return Intl.message(
+      'Your email is not verified go to emialbox and verify your email',
+      name: 'Youremailisnotverifiedgotoemialboxandverifyyouremail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your time settings and make sure the AM/PM is correct`
+  String get PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect {
+    return Intl.message(
+      'Please check your time settings and make sure the AM/PM is correct',
+      name: 'PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

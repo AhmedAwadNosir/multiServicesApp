@@ -200,6 +200,18 @@ class FirebaseServieces {
             .get();
     return snapshot;
   }
+  // i modify the normal method for get chat repo getallcontacts stream
+  // Stream<QuerySnapshot> getSubColectionStream({
+  //   required String colecName,
+  //   required String docId,
+  //   required String subColecName,
+  // }) {
+  //   return _firestore
+  //       .collection(colecName)
+  //       .doc(docId)
+  //       .collection(subColecName)
+  //       .snapshots();
+  // }
 
   // get all docs in required ColectionName whith filed == value
   Future<QuerySnapshot> getSubColectionDocsWhereFiledEqualValue({

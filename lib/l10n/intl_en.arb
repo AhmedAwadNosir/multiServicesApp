@@ -137,6 +137,8 @@
      "ebooks":"ebooks",
      "BookType":"Book Type",
      "PriceType":"Price Type",
-     "Thisusernolongerexists":"This user no longer exists"
+     "Thisusernolongerexists":"This user no longer exists",
+     "Youremailisnotverifiedgotoemialboxandverifyyouremail":"Your email is not verified go to emialbox and verify your email",
+     "PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect":"Please check your time settings and make sure the AM/PM is correct"
            
 }

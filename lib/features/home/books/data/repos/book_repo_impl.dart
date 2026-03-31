@@ -12,7 +12,7 @@ class BookRepoImpl implements BookRepo {
     dio: Dio(),
     baseUrl: "https://www.googleapis.com/books/v1/volumes?",
   );
-
+  final apiKey = "AIzaSyB8lpkMOyaEm863b37riQn47e-Wwc9zQXA";
   @override
   Future<Either<Failure, List<BookModel>>> getBestSellerBooks({
     String? booksType,
@@ -22,7 +22,7 @@ class BookRepoImpl implements BookRepo {
     try {
       var data = await apiServices.get(
         endPoint:
-            "q=${booksType ?? "all"}&filter=${filter ?? "free-ebooks"}&orderBy=relevance",
+            "q=${booksType ?? "all"}&filter=${filter ?? "free-ebooks"}&orderBy=relevance&key=$apiKey",
       );
       List<BookModel> books = [];
       for (var book in data["items"]) {
@@ -48,7 +48,7 @@ class BookRepoImpl implements BookRepo {
     try {
       var data = await apiServices.get(
         endPoint:
-            "q=${booksType ?? "all"}&filter=${filter ?? "free-ebooks"}&orderBy=newest",
+            "q=${booksType ?? "all"}&filter=${filter ?? "free-ebooks"}&orderBy=newest&key=$apiKey",
       );
       List<BookModel> books = [];
       for (var book in data["items"]) {

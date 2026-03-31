@@ -125,6 +125,10 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Please check your internet settings and try again.",
         ),
+    "PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect":
+        MessageLookupByLibrary.simpleMessage(
+          "Please check your time settings and make sure the AM/PM is correct",
+        ),
     "PriceType": MessageLookupByLibrary.simpleMessage("Price Type"),
     "Save": MessageLookupByLibrary.simpleMessage(" Save  "),
     "Savechanges": MessageLookupByLibrary.simpleMessage("Save changes ?"),
@@ -153,6 +157,10 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "WhoIm": MessageLookupByLibrary.simpleMessage("Who I`m? :"),
     "YouCanAlsoLike": MessageLookupByLibrary.simpleMessage("You Can Also Like"),
+    "Youremailisnotverifiedgotoemialboxandverifyyouremail":
+        MessageLookupByLibrary.simpleMessage(
+          "Your email is not verified go to emialbox and verify your email",
+        ),
     "biography": MessageLookupByLibrary.simpleMessage("biography"),
     "books": MessageLookupByLibrary.simpleMessage("books"),
     "chat": MessageLookupByLibrary.simpleMessage("chat"),

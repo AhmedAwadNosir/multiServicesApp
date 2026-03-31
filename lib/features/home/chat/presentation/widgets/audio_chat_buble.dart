@@ -56,7 +56,7 @@ class _AudioChatBubleState extends State<AudioChatBuble> {
     return BubbleNormalAudio(
       constraints: BoxConstraints(
         maxWidth: MediaQuery.of(context).size.width * 0.61,
-        maxHeight: MediaQuery.of(context).size.height * 0.08,
+        maxHeight: MediaQuery.of(context).size.height * 0.1,
       ),
 
       duration: duration.inSeconds.toDouble(),

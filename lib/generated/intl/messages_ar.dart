@@ -123,6 +123,10 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "يرجى التحقق من إعدادات الإنترنت الخاصة بك والمحاولة مرة أخرى.",
         ),
+    "PleasecheckyourtimesettingsandmakesuretheAMPMiscorrect":
+        MessageLookupByLibrary.simpleMessage(
+          "يرجى تصحيح الوقت (ص/م) ثم المحاولة مرة أخرى",
+        ),
     "PriceType": MessageLookupByLibrary.simpleMessage("نوع السعر"),
     "Save": MessageLookupByLibrary.simpleMessage("  حفظ "),
     "Savechanges": MessageLookupByLibrary.simpleMessage(
@@ -151,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "WhoIm": MessageLookupByLibrary.simpleMessage("من أنا؟ :"),
     "YouCanAlsoLike": MessageLookupByLibrary.simpleMessage("قد يعجبك أيضًا"),
+    "Youremailisnotverifiedgotoemialboxandverifyyouremail":
+        MessageLookupByLibrary.simpleMessage(
+          "بريدك الإلكتروني غير مُفعّل. يرجى التحقق من بريدك الإلكتروني لتفعيل الحساب",
+        ),
     "biography": MessageLookupByLibrary.simpleMessage("سيرة ذاتيّة"),
     "books": MessageLookupByLibrary.simpleMessage("كتب"),
     "chat": MessageLookupByLibrary.simpleMessage("دردشة"),

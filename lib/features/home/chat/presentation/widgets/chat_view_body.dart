@@ -75,9 +75,12 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                         if (snapshot.hasError) {
                           return Text(snapshot.error.toString());
                         } else if (snapshot.hasData) {
-                          return MessagesListView(
-                            scrollController: scrollController,
-                            messages: snapshot.data ?? [],
+                          return SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.822,
+                            child: MessagesListView(
+                              scrollController: scrollController,
+                              messages: snapshot.data ?? [],
+                            ),
                           );
                         } else {
                           return Center(

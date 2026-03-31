@@ -13,6 +13,8 @@ class EditNoteView extends StatelessWidget {
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
+        if (didPop)
+          return; // this is so imporatant solve app crach black view when i navpop in realase edtion
         BlocProvider.of<EditNotesConfirmationCubit>(
           context,
         ).editNoteConfrmation(

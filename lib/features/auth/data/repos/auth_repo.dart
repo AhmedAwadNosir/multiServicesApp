@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:multiservices_app/core/utils/fuilureHandler/firebase_failure.dart';
 import 'package:multiservices_app/features/auth/data/models/user_modal.dart';
 
@@ -12,7 +13,9 @@ abstract class AuthRepo {
     required String emailAddress,
     required String password,
   });
-  Future<Either<FireFailure, UserModal>> signInWithGoogle();
+  Future<Either<FireFailure, UserModal>> signInWithGoogle({
+    required BuildContext context,
+  });
   Future<Either<FireFailure, void>> sendRessetPasswordEmail({
     required String emailAddress,
   });
