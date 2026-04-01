@@ -37,8 +37,9 @@ MultiServicesApp is a Flutter application that showcases everything I’ve learn
 ## 🛠️ Technologies & Architecture
 
 - **Flutter & Dart**
-- **Firebase (Authentication & Firestore)**
+- **Firebase (Firestore)**
 - **RESTful APIs Integration**
+- **SubaPase Storage**
 - **Hive (Local Database)**
 
 ### 🧩 Architecture & State Management
